@@ -1,0 +1,54 @@
+// *** Variables *** //
+// Sass variables that generate a single value.
+// Code here shouldn’t generate any selectors or rules.
+
+// * Colors * //
+// Red family : use for DANGER, ERROR, REQUIRED : Hue ~357°
+$red:           hsl(359, 77%, 40%);
+$light-red:     hsl(357, 82%, 78%);
+$pale-red:      hsl(355, 50%, 95%);
+
+// Orange family: use for WARNING, ALERT : Hue ~39°
+$orange:        hsl(30, 100%, 45%);
+$light-orange:  hsl(39, 99%, 72%);
+$pale-orange:   hsl(60, 90%, 96%);
+
+// Blue family: use for INFO, OPTIONAL ACTION, LINKS : Hue ~200°
+$blue:          hsl(200, 77%, 43%);
+$light-blue:    hsl(200, 79%, 57%);
+$pale-blue:     hsl(201, 52%, 95%);
+
+// Green family: use for STATUS, SUCCESS, SUGGESTED ACTION : Hue ~70°
+$green:         hsl(71, 78%, 28%);
+$light-green:   hsl(70, 61%, 51%);
+$pale-green:    hsl(69, 56%, 93%);
+
+// Canonical grays, defined by gray_[n] where [n] is floor/10 value of hsl()
+// I define grays this way to allow me to redefine grays into more meaningful
+// variables later, and to help minimize proliferation of grays (this is hard)
+$gray_3:          hsl(0, 0%, 35%);
+$gray_6:          hsl(0, 0%, 67%);
+$gray_8:          hsl(0, 0%, 85%);
+
+// Gray aliases. Meaningful gray names, aliased to canonical grays
+$gray:            $gray_3;
+$light-gray:      $gray_6;
+$pale-gray:       $gray_8;
+$white:           white;
+$black:           black;
+$eigengrau:       hsl(240,14,10);   // use instead of pure black for text or large fields
+$paperwhite:      hsl(0,0,98);     // use instead of pure white for large fields
+
+// * Fonts * //
+$main-font-family: "SourceSansPro", helvetica, arial, sans-serif;
+// Since the typical default browser font-size is 16px, that makes the calculation for grid size.
+// If you want your base font-size to be a different size and not have it effect grid size too,
+// set the value of $em-base to $base-font-size ($em-base: $base-font-size;)
+$em-base: 16px !default;
+
+// * Layout breakpoints * //
+$mobile-breakpoint: 480px;
+$tablet-breakpoint: 1024px;
+
+// * block-level element margins *//
+$block-element-margins: 1em 0;

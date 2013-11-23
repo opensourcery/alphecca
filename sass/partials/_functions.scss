@@ -1,0 +1,8 @@
+// *** Functions *** //
+// Sass functions that generate a single value.
+// Code here shouldn’t generate any selectors or rules.
+
+@function emCalc($pxWidth) {
+  // Working in ems is annoying. Think in pixels by using this handy function, emCalc(#px)
+  @return $pxWidth / $em-base * 1em;
+}
