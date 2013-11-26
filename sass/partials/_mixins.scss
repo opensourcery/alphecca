@@ -1,0 +1,28 @@
+// *** Mixins *** //
+
+// Sass mixins that generate selectors or rules when called elsewhere.
+// Code here shouldn’t generate any selectors or rules on their own.
+
+@mixin boldheader() {
+  font-weight: bold;
+  color: $eigengrau;
+}
+
+@mixin quietheader() {
+  font-weight: normal;
+  color: $gray;
+}
+
+@mixin declare-font-face($font-family, $font-filename, $font-weight : normal, $font-style :normal, $font-stretch : normal) {
+  @font-face {
+    font-family: '#{$font-family}';
+    src: url('../vendor/alphecca/fonts/#{$font-family}/#{$font-filename}-webfont.eot');
+    src: url('../vendor/alphecca/fonts/#{$font-family}/#{$font-filename}-webfont.eot?#iefix') format('embedded-opentype'),
+    url('../vendor/alphecca/fonts/#{$font-family}/#{$font-filename}-webfont.woff') format('woff'),
+    url('../vendor/alphecca/fonts/#{$font-family}/#{$font-filename}-webfont.ttf') format('truetype'),
+    url('../vendor/alphecca/fonts/#{$font-family}/#{$font-filename}-webfont.svg##{$font-family}') format('svg');
+    font-weight: $font-weight;
+    font-style: $font-style;
+    font-stretch: $font-stretch;
+  }
+}

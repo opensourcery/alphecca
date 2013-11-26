@@ -3,10 +3,10 @@
 // *** Imports *** //
 // Sass imports.
 // Code here shouldn’t generate any selectors or rules.
-@import "partials/sourcesans.scss";
-@import "partials/variables.scss";
-@import "partials/mixins.scss";
-@import "partials/functions.scss";
+@import "partials/variables";
+@import "partials/mixins";
+@import "partials/functions";
+@import "partials/sourcesans";
 
 // *** Base *** //
 // A Base rule is applied to an element using an element selector, a descendent
@@ -16,15 +16,15 @@
 // -- http://smacss.com/book/type-base
 
 html, body {
-	font-family: $main-font-family;
+  font-family: $main-font-family;
 }
 body {
   line-height: 1.2;
-	color: $eigengrau;
-	background-color: $paperwhite;
+  color: $eigengrau;
+  background-color: $paperwhite;
 }
 img {
-	max-width: 100%;
+  max-width: 100%;
 }
 
 // * Links * //
