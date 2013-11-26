@@ -1,4 +1,9 @@
 alphecca
 ========
 
-Sass framework for Bedrock/Rootcellar/Illinois/etc.
+Sass framework/library for use in any project. This is not a compass extension,
+rather it's just a library (for now, during develoment).
+
+# Usage
+
+???????????????????????
