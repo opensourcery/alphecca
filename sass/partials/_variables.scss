@@ -2,7 +2,10 @@
 // Sass variables that generate a single value.
 // Code here shouldn’t generate any selectors or rules.
 
-// * Colors * //
+// *
+// * Colors
+// *
+
 // Red family : use for DANGER, ERROR, REQUIRED : Hue ~357°
 $red:           hsl(359, 77%, 40%);
 $light-red:     hsl(357, 82%, 78%);
@@ -39,17 +42,46 @@ $black:           black;
 $eigengrau:       hsl(240,14,10);   // use instead of pure black for text or large fields
 $paperwhite:      hsl(0,0,98);     // use instead of pure white for large fields
 
-// * Fonts * //
-$main-font-family: "SourceSansPro", helvetica, arial, sans-serif;
-// Since the typical default browser font-size is 16px, that makes the calculation for grid size.
-// If you want your base font-size to be a different size and not have it effect grid size too,
-// set the value of $em-base to $base-font-size ($em-base: $base-font-size;)
-$em-base: 16px !default;
+// Foundation defaults colors.
+$foundation-primary:    hsl(195, 100%, 36%);  // blue
+$foundation-secondary:  hsl(0, 0%, 91%);      // grey
+$foundation-alert:      hsl(9, 87%, 54%);     // red
+$foundation-success:    hsl(142, 44%, 47%);   // green
+$foundation-warning:    hsl(30, 87%, 54%);    // orange
+$foundation-info:       hsl(198, 61%, 77%);   // pale blue
 
-// * Layout breakpoints * //
-$mobile-breakpoint: 480px;
-$tablet-breakpoint: 1024px;
+// Assign some colors
+$body-bg:           $paperwhite;
+$primary-color:     $blue;
+$secondary-color:   $grey_3;
+$alert-color:       $red;
+$success-color:     $green;
+$warning-color:     $orange;
+$info-color:        $pale-blue;
 
-// * block-level element margins *//
-$block-element-margins: 1em 0;
+// Link colors.
+$anchor-font-color:         $blue;
+$anchor-font-color-hover:   $green;
+$anchor-font-color-active:  $red
+$anchor-font-color-visited: $light-blue;
+
+
+// *
+// * Fonts
+// *
+
+// Stacks
+$SourceSansPro: "SourceSansPro", helvetica, arial, sans-serif;
+$Helvetica: "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
+$OpenSans: join("Open Sans", $Helvetica);
+$monospace: Consolas, monaco, monospace;
+
+// Assign some fonts.
+$body-font-family: $SourceSansPro;
+$header-font-family: $OpenSans;
+$code-font-family: $monospce;
+
+
+
+
 
