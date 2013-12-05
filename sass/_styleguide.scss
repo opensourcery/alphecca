@@ -16,33 +16,21 @@
 // that element should look in all occurrences on the page.
 // -- http://smacss.com/book/type-base
 
-html, body {
-  font-family: $main-font-family;
-}
-body {
-  line-height: 1.2;
-  color: $eigengrau;
-  background-color: $paperwhite;
-}
-img {
-  max-width: 100%;
-}
-
-// * Links * //
+// * Anchors * //
 a {
   &:link {
-    color: $blue;
+    color: $anchor-font-color
     text-decoration: none;
   }
   &:hover {
-    color: $green;
+    color: $anchor-font-color-hover;
     text-decoration: underline;
   }
   &:active {
-    color: $red;
+    color: $anchor-font-color-active;
   }
   &:visited {
-    color: $light-blue;
+    color: $anchor-font-color-visited;
     text-decoration: none;
   }
 }
@@ -50,70 +38,19 @@ a {
 // * Headings * //
 h1 {
   @include boldheader();
-  font-size: emCalc(36px);
 }
 h2 {
   @include boldheader();
-  font-size: emCalc(28px);
 }
 h3 {
   @include quietheader();
-  font-size: emCalc(28px);
 }
 h4 {
   @include boldheader();
-  font-size: emCalc(18px);
 }
 h5 {
   @include quietheader();
-  font-size: emCalc(16px);
 }
 h6 {
   @include quietheader();
-  font-size: emCalc(12px);
-}
-
-// * Basic Elements * //
-p {
-  margin: $block-element-margins;
-}
-address {
-}
-strong, b {
-  font-weight: bold;
-}
-em, cite, i {
-  font-style: italic;
-}
-
-/* Forms */
-form { }
-input[type=text], textarea { }
-input[type=submit] { }
-
-/* Lists */
-ul {
-  list-style-type: disc;
-}
-ol {
-  list-style-type: decimal;
-}
-ol, ul {
-  padding-left: emCalc(30px);
-  padding-left: emCalc(30px);
-  margin: $block-element-margins;
-  ul, ol {
-    margin: 0;
-  }
-}
-
-// * Basic Classes * //
-.align-left {
-  text-align: left;
-}
-.align-center {
-  text-align: center;
-}
-.align-right {
-  text-align: right;
 }
