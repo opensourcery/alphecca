@@ -53,16 +53,16 @@ $foundation-info:       hsl(198, 61%, 77%);   // pale blue
 // Assign some colors
 $body-bg:           $paperwhite;
 $primary-color:     $blue;
-$secondary-color:   $grey_3;
+$secondary-color:   $gray_3;
 $alert-color:       $red;
 $success-color:     $green;
 $warning-color:     $orange;
-$info-color:        $pale-blue;
+$info-color:        $light-blue;
 
 // Link colors.
 $anchor-font-color:         $blue;
 $anchor-font-color-hover:   $green;
-$anchor-font-color-active:  $red
+$anchor-font-color-active:  $red;
 $anchor-font-color-visited: $light-blue;
 
 
@@ -79,7 +79,7 @@ $monospace: Consolas, monaco, monospace;
 // Assign some fonts.
 $body-font-family: $SourceSansPro;
 $header-font-family: $OpenSans;
-$code-font-family: $monospce;
+$code-font-family: $monospace;
 
 
 
