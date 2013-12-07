@@ -71,14 +71,16 @@ $anchor-font-color-visited: $light-blue;
 // *
 
 // Stacks
-$SourceSansPro: "SourceSansPro", helvetica, arial, sans-serif;
-$Helvetica: "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
-$OpenSans: join("Open Sans", $Helvetica);
-$monospace: Consolas, monaco, monospace;
+$Helvetica:     "Helvetica Neue", Helvetica, Arial, sans-serif;
+$SourceSansPro: "SourceSansPro", #{$Helvetica};
+$OpenSans:      "Open Sans", #{$Helvetica};
+$monospace:     Consolas, monaco, monospace;
 
 // Assign some fonts.
-$body-font-family: $SourceSansPro;
-$header-font-family: $OpenSans;
+$default-font-family: $OpenSans;
+
+$body-font-family: $default-font-family;
+$header-font-family: $default-font-family;
 $code-font-family: $monospace;
 
 

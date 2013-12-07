@@ -16,6 +16,20 @@
 // that element should look in all occurrences on the page.
 // -- http://smacss.com/book/type-base
 
+// * Global Elements * //
+body {
+  background: $body-bg;
+  color: $body-font-color;
+  padding: 0;
+  margin: 0;
+  font-family: $body-font-family;
+  font-weight: $body-font-weight;
+  font-style: $body-font-style;
+  line-height: 1; // Set to $base-line-height to take on browser default of 150%
+  position: relative;
+  cursor: $cursor-default-value;
+}
+
 // * Anchors * //
 a {
   &:link {
