@@ -1,15 +1,8 @@
-// *** SMACSSified ! *** //
+////////////////////////
+// Styleguide Partial
+////////////////////////
 
-// *** Imports *** //
-// Sass imports.
-// Code here shouldn’t generate any selectors or rules.
-@import "../foundation-optimized/sass/components/index";
-@import "partials/variables";
-@import "partials/mixins";
-@import "partials/functions";
-@import "partials/sourcesans";
-
-// *** Base *** //
+// ** Base ** //
 // A Base rule is applied to an element using an element selector, a descendent
 // selector, or a child selector, along with any pseudo-classes. It doesn’t
 // include any class or ID selectors. It is defining the default styling for how
@@ -17,17 +10,22 @@
 // -- http://smacss.com/book/type-base
 
 // * Global Elements * //
+html,
+body {
+  font-size: $base-font-size;
+}
+
 body {
   background: $body-bg;
   color: $body-font-color;
-  padding: 0;
-  margin: 0;
-  font-family: $body-font-family;
-  font-weight: $body-font-weight;
-  font-style: $body-font-style;
-  line-height: 1; // Set to $base-line-height to take on browser default of 150%
-  position: relative;
   cursor: $cursor-default-value;
+  font-family: $body-font-family;
+  font-style: $body-font-style;
+  font-weight: $body-font-weight;
+  line-height: $base-line-height;
+  margin: 0;
+  padding: 0;
+  position: relative;
 }
 
 // * Anchors * //
@@ -51,20 +49,39 @@ a {
 
 // * Headings * //
 h1 {
+  @include adjust-font-size-to(36px);
   @include boldheader();
+  margin: 0 0 rhythm(1, 36px) 0;
 }
 h2 {
+  @include adjust-font-size-to(30px);
   @include boldheader();
+  margin: rhythm(1, 30px) 0;
 }
 h3 {
+  @include adjust-font-size-to(25px);
   @include quietheader();
+  margin: rhythm(1, 25px) 0;
 }
 h4 {
+  @include adjust-font-size-to(21px);
   @include boldheader();
+  margin: rhythm(1, 21px) 0;
 }
 h5 {
+  @include adjust-font-size-to(18px);
   @include quietheader();
+  margin: rhythm(1, 18px) 0;
 }
 h6 {
+  @include adjust-font-size-to(15px);
   @include quietheader();
+  margin: rhythm(1, 15px) 0;
+}
+
+// * Images * //
+// Get rid of gap under images by making them display: inline-block; by default
+img {
+  display: inline-block;
+  vertical-align: middle;
 }

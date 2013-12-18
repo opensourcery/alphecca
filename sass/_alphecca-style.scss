@@ -1,0 +1,26 @@
+////////////////////////
+// Alphecca Style Partial
+//
+// SMACSSified !
+// Code here shouldn’t generate any selectors or rules.
+//
+// Import this partial into your SMACSS-based theme.
+////////////////////////
+
+////////////////////////
+// Compass Extensions
+////////////////////////
+@import 'singularitygs';
+@import 'toolkit';
+@import 'sassy-buttons';
+
+////////////////////////
+// Imports
+////////////////////////
+@import "partials/variables";
+@import "partials/functions";
+@import "partials/mixins";
+@import "partials/fonts";
+@import 'partials/styleguide';
+@import 'partials/layouts';
+@import 'partials/modules';

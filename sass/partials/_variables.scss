@@ -1,89 +1,129 @@
-// *** Variables *** //
+////////////////////////
+// Variables Partial
+//
 // Sass variables that generate a single value.
 // Code here shouldn’t generate any selectors or rules.
+////////////////////////
 
-// *
-// * Colors
-// *
+// ** Colors ** //
 
 // Red family : use for DANGER, ERROR, REQUIRED : Hue ~357°
-$red:           hsl(359, 77%, 40%);
-$light-red:     hsl(357, 82%, 78%);
-$pale-red:      hsl(355, 50%, 95%);
+$red:           hsl(359, 77%, 40%) !default;
+$light-red:     hsl(357, 82%, 78%) !default;
+$pale-red:      hsl(355, 50%, 95%) !default;
 
 // Orange family: use for WARNING, ALERT : Hue ~39°
-$orange:        hsl(30, 100%, 45%);
-$light-orange:  hsl(39, 99%, 72%);
-$pale-orange:   hsl(60, 90%, 96%);
+$orange:        hsl(30, 100%, 45%) !default;
+$light-orange:  hsl(39, 99%, 72%) !default;
+$pale-orange:   hsl(60, 90%, 96%) !default;
 
 // Blue family: use for INFO, OPTIONAL ACTION, LINKS : Hue ~200°
-$blue:          hsl(200, 77%, 43%);
-$light-blue:    hsl(200, 79%, 57%);
-$pale-blue:     hsl(201, 52%, 95%);
+$blue:          hsl(200, 77%, 43%) !default;
+$light-blue:    hsl(200, 79%, 57%) !default;
+$pale-blue:     hsl(201, 52%, 95%) !default;
 
 // Green family: use for STATUS, SUCCESS, SUGGESTED ACTION : Hue ~70°
-$green:         hsl(71, 78%, 28%);
-$light-green:   hsl(70, 61%, 51%);
-$pale-green:    hsl(69, 56%, 93%);
+$green:         hsl(71, 78%, 28%) !default;
+$light-green:   hsl(70, 61%, 51%) !default;
+$pale-green:    hsl(69, 56%, 93%) !default;
 
 // Canonical grays, defined by gray_[n] where [n] is floor/10 value of hsl()
 // I define grays this way to allow me to redefine grays into more meaningful
 // variables later, and to help minimize proliferation of grays (this is hard)
-$gray_3:          hsl(0, 0%, 35%);
-$gray_6:          hsl(0, 0%, 67%);
-$gray_8:          hsl(0, 0%, 85%);
+$gray_3:          hsl(0, 0%, 35%) !default;
+$gray_6:          hsl(0, 0%, 67%) !default;
+$gray_8:          hsl(0, 0%, 85%) !default;
 
 // Gray aliases. Meaningful gray names, aliased to canonical grays
-$gray:            $gray_3;
-$light-gray:      $gray_6;
-$pale-gray:       $gray_8;
-$white:           white;
-$black:           black;
-$eigengrau:       hsl(240,14,10);   // use instead of pure black for text or large fields
-$paperwhite:      hsl(0,0,98);     // use instead of pure white for large fields
-
-// Foundation defaults colors.
-$foundation-primary:    hsl(195, 100%, 36%);  // blue
-$foundation-secondary:  hsl(0, 0%, 91%);      // grey
-$foundation-alert:      hsl(9, 87%, 54%);     // red
-$foundation-success:    hsl(142, 44%, 47%);   // green
-$foundation-warning:    hsl(30, 87%, 54%);    // orange
-$foundation-info:       hsl(198, 61%, 77%);   // pale blue
+$gray:            $gray_3 !default;
+$light-gray:      $gray_6 !default;
+$pale-gray:       $gray_8 !default;
+$white:           white !default;
+$black:           black !default;
+$eigengrau:       hsl(240,14,10) !default;   // use instead of pure black for text or large fields
+$paperwhite:      hsl(0,0,98) !default;     // use instead of pure white for large fields
 
 // Assign some colors
-$body-bg:           $paperwhite;
-$primary-color:     $blue;
-$secondary-color:   $gray_3;
-$alert-color:       $red;
-$success-color:     $green;
-$warning-color:     $orange;
-$info-color:        $light-blue;
+$body-bg:           $paperwhite !default;
+$body-font-color:   $eigengrau !default;
+$primary-color:     $blue !default;
+$secondary-color:   $gray_3 !default;
+$alert-color:       $red !default;
+$success-color:     $green !default;
+$warning-color:     $orange !default;
+$info-color:        $light-blue !default;
 
 // Link colors.
-$anchor-font-color:         $blue;
-$anchor-font-color-hover:   $green;
-$anchor-font-color-active:  $red;
-$anchor-font-color-visited: $light-blue;
+$anchor-font-color:         $blue !default;
+$anchor-font-color-hover:   $green !default;
+$anchor-font-color-active:  $red !default;
+$anchor-font-color-visited: $light-blue !default;
 
 
-// *
-// * Fonts
-// *
+// ** Fonts ** //
 
 // Stacks
-$Helvetica:     "Helvetica Neue", Helvetica, Arial, sans-serif;
-$SourceSansPro: "SourceSansPro", #{$Helvetica};
-$OpenSans:      "Open Sans", #{$Helvetica};
-$monospace:     Consolas, monaco, monospace;
+$Helvetica:     "Helvetica Neue", Helvetica, Arial, sans-serif !default;
+$SourceSansPro: "SourceSansPro", #{$Helvetica} !default;
+$OpenSans:      "Open Sans", #{$Helvetica} !default;
+$monospace:     Consolas, monaco, monospace !default;
+
+// Weight & style
+$body-font-weight: normal !default;
+$body-font-style: normal !default;
+
+// We use this to control font-smoothing
+$font-smoothing: antialiased !default;
+
+// We use these to control text direction settings
+$text-direction: ltr !default;
+
+// NOTE: No need to change this conditional statement, $text-direction variable controls it all.
+$default-float: left !default;
+$opposite-direction: right !default;
+@if $text-direction == ltr {
+  $default-float: left;
+  $opposite-direction: right;
+} @else {
+  $default-float: right;
+  $opposite-direction: left;
+}
 
 // Assign some fonts.
-$default-font-family: $OpenSans;
+$default-font-family: $OpenSans !default;
 
-$body-font-family: $default-font-family;
-$header-font-family: $default-font-family;
-$code-font-family: $monospace;
+$body-font-family: $default-font-family !default;
+$header-font-family: $default-font-family !default;
+$code-font-family: $monospace !default;
 
+// ** Typography ** //
 
+// The default font-size is set to 100% of the browser style sheet (usually 16px)
+// for compatibility with brower-based text zoom or user-set defaults.
+$base-font-size: 100% !default;
 
+// $base-line-height is 24px while $base-font-size is 16px
+$base-line-height: 150% !default;
 
+// This is the default html and body font-size for the base rem value.
+$rem-base: 16px !default;
 
+// Using 'rem' gives a fallback declaration in pixels for older browsers.
+$rhythm-unit: 'rem' !default;
+
+// Vertical rhythm
+@include establish-baseline;
+
+// ** Cursors ** //
+
+$cursor-crosshair-value: crosshair !default;
+$cursor-default-value: default !default;
+$cursor-pointer-value: pointer !default;
+$cursor-help-value: help !default;
+$cursor-text-value: text !default;
+
+// ** Borders **//
+
+// We use these to make sure border radius matches unless we want it different.
+$global-radius: 3px !default;
+$global-rounded: 1000px !default;

@@ -1,7 +1,9 @@
-// *** Mixins *** //
-
+////////////////////////
+// Mixins Partial
+//
 // Sass mixins that generate selectors or rules when called elsewhere.
 // Code here shouldn’t generate any selectors or rules on their own.
+////////////////////////
 
 @mixin boldheader() {
   font-weight: bold;
@@ -18,11 +20,127 @@
     font-family: '#{$font-family}';
     src: url('../vendor/alphecca/fonts/#{$font-family}/#{$font-filename}-webfont.eot');
     src: url('../vendor/alphecca/fonts/#{$font-family}/#{$font-filename}-webfont.eot?#iefix') format('embedded-opentype'),
-    url('../vendor/alphecca/fonts/#{$font-family}/#{$font-filename}-webfont.woff') format('woff'),
-    url('../vendor/alphecca/fonts/#{$font-family}/#{$font-filename}-webfont.ttf') format('truetype'),
-    url('../vendor/alphecca/fonts/#{$font-family}/#{$font-filename}-webfont.svg##{$font-family}') format('svg');
+         url('../vendor/alphecca/fonts/#{$font-family}/#{$font-filename}-webfont.woff') format('woff'),
+         url('../vendor/alphecca/fonts/#{$font-family}/#{$font-filename}-webfont.ttf') format('truetype'),
+         url('../vendor/alphecca/fonts/#{$font-family}/#{$font-filename}-webfont.svg##{$font-family}') format('svg');
     font-weight: $font-weight;
     font-style: $font-style;
     font-stretch: $font-stretch;
+  }
+}
+
+
+// ** Border Radius ** //
+
+// We use this to control border radius.
+// $radius - Default: $global-radius || 4px
+@mixin radius($radius:$global-radius) {
+  @if $radius {
+    @include border-radius($radius);
+  }
+}
+
+
+// ** Breadcrumb ** //
+
+// Breadcrumb container
+@mixin crumb-container {
+  @include radius($global-radius);
+  background-color: $gray_8;
+  border-color: $gray_6;
+  border-style: solid;
+  border-width: 1px;
+  display: block;
+  list-style: none;
+  margin: rem-calc(18 0);
+  overflow: hidden;
+  padding: rem-calc(9 14 9);
+}
+
+// Individual breadcrumbs
+@mixin crumbs {
+  color: $anchor-font-color;
+  font-size: rem-calc(11);
+  text-transform: uppercase;
+
+  &:hover, &:focus {
+    color: $anchor-font-color-hover;
+    text-decoration: none;
+  }
+
+  &:before {
+    content: "/";
+    color: $gray_6;
+    margin: rem-calc(0 12);
+    position: relative;
+    top: 1px;
+  }
+
+  &:first-child:before {
+    content: "";
+    margin: 0;
+  }
+}
+
+
+// ** Sub-nav ** //
+
+$sub-nav-item-divider: "|" !default;
+$sub-nav-item-divider-margin: rem-calc(12) !default;
+
+@mixin sub-nav {
+  display: block;
+  margin: rem-calc(-4 0 18);
+  margin-#{$default-float}: 0;
+  margin-#{$opposite-direction}: 0;
+  overflow: hidden;
+  padding-left: 0;
+  padding-top: rem-calc(4);
+  width: auto;
+
+  li {
+    color: $secondary-color;
+    display: inline;
+    float: $default-float;
+    font-family: $body-font-family;
+    font-size: rem-calc(14);
+    margin-#{$default-float}: rem-calc(16);
+    margin-bottom: rem-calc(10);
+
+    a {
+      color: $secondary-color;
+      text-decoration: none;
+
+      &:hover {
+	color: $gray_6;
+      }
+    }
+
+    a.active {
+      @include radius($global-radius);
+      background: $anchor-font-color;
+      color: $paperwhite;
+      cursor: default;
+      padding: rem-calc(3 16);
+
+      &:hover {
+	background: $anchor-font-color-hover;
+      }
+    }
+
+    @if $sub-nav-item-divider != "" {
+      margin-#{$default-float}: 0;
+      padding-#{$opposite-direction}: 0;
+
+      &:before {
+        content: "#{$sub-nav-item-divider}";
+        margin: 0 $sub-nav-item-divider-margin;
+      }
+
+      &:first-child:before {
+        content: "";
+        margin: 0;
+      }
+    }
   }
 }
