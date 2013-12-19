@@ -16,7 +16,22 @@
 
 // ** Menus **//
 
-header ul.menu:not(.sf-menu),
-footer ul.menu:not(.sf-menu) {
+#header ul.menu:not(.sf-menu),
+#footer ul.menu:not(.sf-menu) {
   @include sub-nav();
+}
+
+// ** Tabs ** //
+
+ul.tabs {
+  @include sub-nav();
+}
+
+// ** Blocks ** //
+
+// * User block * //
+#block-system-user-menu {
+  h2 {
+    @extend %element-invisible;
+  }
 }

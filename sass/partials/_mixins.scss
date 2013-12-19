@@ -46,8 +46,8 @@
 // Breadcrumb container
 @mixin crumb-container {
   @include radius($global-radius);
-  background-color: $gray_8;
-  border-color: $gray_6;
+  background-color: tint($gray_8, 60%);
+  border-color: $gray_8;
   border-style: solid;
   border-width: 1px;
   display: block;
@@ -89,23 +89,16 @@ $sub-nav-item-divider: "|" !default;
 $sub-nav-item-divider-margin: rem-calc(12) !default;
 
 @mixin sub-nav {
-  display: block;
-  margin: rem-calc(-4 0 18);
-  margin-#{$default-float}: 0;
-  margin-#{$opposite-direction}: 0;
-  overflow: hidden;
-  padding-left: 0;
-  padding-top: rem-calc(4);
-  width: auto;
+  @include horizontal-list($padding: false);
+  margin: rem-calc(18 0);
 
   li {
-    color: $secondary-color;
-    display: inline;
-    float: $default-float;
+    color: $gray_8;
     font-family: $body-font-family;
-    font-size: rem-calc(14);
+    font-size: rem-calc(11);
     margin-#{$default-float}: rem-calc(16);
     margin-bottom: rem-calc(10);
+    text-transform: uppercase;
 
     a {
       color: $secondary-color;

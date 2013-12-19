@@ -3,3 +3,33 @@
 //
 // Code here shouldn’t generate any selectors or rules.
 ////////////////////////
+
+// ** Regions ** //
+
+// * Header * //
+#header {
+  margin-bottom: rem-calc(18);
+  padding-bottom: rem-calc(18);
+
+  #site-name {
+    float: left;
+  }
+
+  .block {
+    clear: right;
+    float: right;
+    margin-left: rem-calc(14);
+  }
+
+  .block-superfish {
+    clear: both;
+    float: none;
+    margin-left: 0;
+  }
+}
+
+// * Footer * //
+#footer {
+  margin-top: rem-calc(18);
+  padding: rem-calc(14 18);
+}
