@@ -51,7 +51,7 @@ a {
 h1 {
   @include adjust-font-size-to(36px);
   @include boldheader();
-  margin: 0 0 rhythm(1, 36px) 0;
+  margin: rhythm(0.5, 36px) 0 rhythm(1, 36px) 0;
 }
 h2 {
   @include adjust-font-size-to(30px);

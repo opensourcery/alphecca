@@ -90,7 +90,7 @@ $sub-nav-item-divider-margin: rem-calc(12) !default;
 
 @mixin sub-nav {
   @include horizontal-list($padding: false);
-  margin: rem-calc(18 0);
+  margin: rem-calc(10 0);
 
   li {
     color: $gray_8;

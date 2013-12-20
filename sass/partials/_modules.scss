@@ -32,6 +32,12 @@ ul.tabs {
 // * User block * //
 #block-system-user-menu {
   h2 {
-    @extend %element-invisible;
+    float: right;
+    margin: rhythm(0.25, 30px) 0;
+  }
+
+  .content {
+    clear: right;
+    float: right;
   }
 }
