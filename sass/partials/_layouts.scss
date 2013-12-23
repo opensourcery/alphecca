@@ -9,7 +9,7 @@
 // * Header * //
 #header {
   margin-bottom: rem-calc(18);
-  padding-bottom: rem-calc(18);
+  padding: rem-calc(18 0);
 
   #site-name {
     float: left;
@@ -30,6 +30,6 @@
 
 // * Footer * //
 #footer {
-  margin-top: rem-calc(18);
+  margin-top: rem-calc(36);
   padding: rem-calc(14 18 18);
 }
