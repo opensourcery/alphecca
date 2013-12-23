@@ -5,17 +5,29 @@
 // Code here shouldn’t generate any selectors or rules on their own.
 ////////////////////////
 
-@mixin boldheader() {
-  font-weight: bold;
-  color: $eigengrau;
+@mixin boldheader($font-weight, $color: $eigengrau, $font-style: "", $text-transform: "") {
+  @if $font-style != "" {
+    font-style: $font-style;
+  }
+  @if $text-transform != "" {
+    text-transform: $text-transform;
+  }
+  color: $color;
+  font-weight: $font-weight;
 }
 
-@mixin quietheader() {
-  font-weight: normal;
-  color: $gray;
+@mixin quietheader($font-weight, $color: $gray, $font-style: "", $text-transform: "") {
+  @if $font-style != "" {
+    font-style: $font-style;
+  }
+  @if $text-transform != "" {
+    text-transform: $text-transform;
+  }
+  color: $color;
+  font-weight: $font-weight;
 }
 
-@mixin declare-font-face($font-family, $font-filename, $font-weight : normal, $font-style :normal, $font-stretch : normal) {
+@mixin declare-font-face($font-family, $font-filename, $font-weight: normal, $font-style: normal, $font-stretch: normal) {
   @font-face {
     font-family: '#{$font-family}';
     src: url('../vendor/alphecca/fonts/#{$font-family}/#{$font-filename}-webfont.eot');
@@ -93,9 +105,9 @@ $sub-nav-item-divider-margin: rem-calc(12) !default;
   margin: rem-calc(10 0);
 
   li {
+    @include adjust-font-size-to(11px);
     color: $gray_8;
     font-family: $body-font-family;
-    font-size: rem-calc(11);
     margin-#{$default-float}: rem-calc(16);
     margin-bottom: rem-calc(10);
     text-transform: uppercase;
@@ -136,4 +148,48 @@ $sub-nav-item-divider-margin: rem-calc(12) !default;
       }
     }
   }
+}
+
+
+// ** Tables ** //
+
+@mixin table {
+  background: $white;
+  border: 1px solid $gray_8;
+  border-collapse: separate;
+  border-spacing: 1px;
+  margin-bottom: rem-calc(18);
+  width: 100%;
+
+  thead,
+  tfoot {
+    background: tint($gray_8, 60%);
+
+    tr {
+      th,
+      td {
+        padding: rem-calc(9 14);
+        text-align: $default-float;
+      }
+      th {
+        @include adjust-font-size-to(14px);
+        @include boldheader(700, $gray, "", uppercase);
+      }
+    }
+  }
+
+  tr {
+    td {
+      @include adjust-font-size-to(14px);
+      padding: rem-calc(9 14);
+    }
+
+    &.even { background: tint($gray_8, 80%); }
+  }
+
+  thead tr th,
+  tfoot tr th,
+  tbody tr td,
+  tr td,
+  tfoot tr td { display: table-cell; line-height: rem-calc(18); }
 }

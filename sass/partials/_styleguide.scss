@@ -34,6 +34,10 @@ a {
     color: $anchor-font-color;
     text-decoration: none;
   }
+  &:visited {
+    color: $anchor-font-color-visited;
+    text-decoration: none;
+  }
   &:hover {
     color: $anchor-font-color-hover;
     text-decoration: underline;
@@ -41,41 +45,41 @@ a {
   &:active {
     color: $anchor-font-color-active;
   }
-  &:visited {
-    color: $anchor-font-color-visited;
-    text-decoration: none;
-  }
 }
 
 // * Headings * //
+h1, h2, h3, h4, h5, h6 {
+  font-family: $OpenSans;
+  text-rendering: optimizeLegibility;
+}
 h1 {
   @include adjust-font-size-to(36px);
-  @include boldheader();
+  @include boldheader(700, $eigengrau, "", "");
   margin: rhythm(0.5, 36px) 0 rhythm(1, 36px) 0;
 }
 h2 {
   @include adjust-font-size-to(30px);
-  @include boldheader();
+  @include quietheader(300, $gray, "", "");
   margin: rhythm(1, 30px) 0;
 }
 h3 {
   @include adjust-font-size-to(25px);
-  @include quietheader();
+  @include quietheader(300, $eigengrau, "", "");
   margin: rhythm(1, 25px) 0;
 }
 h4 {
   @include adjust-font-size-to(21px);
-  @include boldheader();
+  @include boldheader(400, $gray, "", "");
   margin: rhythm(1, 21px) 0;
 }
 h5 {
   @include adjust-font-size-to(18px);
-  @include quietheader();
+  @include quietheader(300, $eigengrau, italic, "");
   margin: rhythm(1, 18px) 0;
 }
 h6 {
   @include adjust-font-size-to(15px);
-  @include quietheader();
+  @include boldheader(700, $gray, "", uppercase);
   margin: rhythm(1, 15px) 0;
 }
 
@@ -84,6 +88,15 @@ h6 {
 img {
   display: inline-block;
   vertical-align: middle;
+
+  a & {
+    border: none;
+  }
+}
+
+// * Tables * //
+table {
+  @include table;
 }
 
 

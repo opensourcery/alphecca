@@ -66,7 +66,7 @@ $anchor-font-color-visited: $light-blue !default;
 $Helvetica:     "Helvetica Neue", Helvetica, Arial, sans-serif !default;
 $SourceSansPro: "SourceSansPro", #{$Helvetica} !default;
 $OpenSans:      "Open Sans", #{$Helvetica} !default;
-$monospace:     Consolas, monaco, monospace !default;
+$monospace:     Consolas, "Liberation Mono", Monaco, Courier, monospace !default;
 
 // Weight & style
 $body-font-weight: normal !default;
