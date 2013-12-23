@@ -99,6 +99,141 @@ table {
   @include table;
 }
 
+// * Typography Defaults * //
+p {
+  margin: rem-calc(18 0);
+}
+
+hr {
+  border: solid $gray_8;
+  border-width: 1px 0 0;
+  clear: both;
+  height: 0;
+  margin: rem-calc(18 0);
+}
+
+em,
+i {
+  font-style: italic;
+  line-height: inherit;
+}
+
+strong,
+b {
+  font-weight: bold;
+  line-height: inherit;
+}
+
+small {
+  color: $gray;
+  font-size: 60%;
+  line-height: inherit;
+}
+
+pre {
+  @include box-shadow(rgba(0, 0, 0, .05) 0px 2px 10px inset);
+  background-color: tint($gray_8, 80%);
+  margin-bottom: rem-calc(18);
+  padding: rem-calc(14);
+}
+
+code {
+  color: $secondary-color;
+  font-family: $monospace;
+  font-size: 90%;
+}
+
+sup {
+  @include adjust-font-size-to(11px);
+  margin: rem-calc(3 0 -3);
+}
+
+sub {
+  @include adjust-font-size-to(11px);
+  margin: rem-calc(-3 0 3);
+}
+
+// * Lists * //
+:not(nav) ul,
+ol,
+dl {
+  list-style-position: outside;
+  margin-bottom: rem-calc(18);
+}
+
+// * Unordered Lists * //
+ul {
+  margin-#{$default-float}: 1.1rem;
+  li {
+    ul,
+    ol {
+      font-size: 1rem; /* Override nested font-size change */
+      margin-#{$default-float}: rem-calc(18);
+      margin-bottom: 0;
+    }
+  }
+}
+
+// * Ordered Lists * //
+ol {
+  margin-#{$default-float}: 1.4rem;
+  li {
+    ul,
+    ol {
+      margin-#{$default-float}: rem-calc(18);
+      margin-bottom: 0;
+    }
+  }
+}
+
+// * Definition Lists * //
+dl {
+  dt {
+    @include adjust-font-size-to(14px);
+    @include boldheader(700, $gray, "", uppercase);
+    margin-bottom: 0.3rem;
+  }
+  dd { margin-bottom: rem-calc(14); }
+}
+
+// * Abbreviations * //
+abbr,
+acronym {
+  border-bottom: 1px dotted $gray_8;
+  color: $body-font-color;
+  cursor: $cursor-help-value;
+  font-size: 90%;
+  text-transform: uppercase;
+}
+abbr {
+  text-transform: none;
+}
+
+// * Blockquotes * //
+blockquote {
+  border-#{$default-float}: 1px solid $gray_8;
+  margin: rem-calc(0 0 18);
+  padding: rem-calc(9 18 0 18);
+
+  cite {
+    color: scale-color($eigengrau, $lightness: 23%);
+    display: block;
+    font-size: rem-calc(14);
+    &:before {
+      content: "\2014 \0020";
+    }
+
+    a,
+    a:visited {
+      color: scale-color($eigengrau, $lightness: 23%);
+    }
+  }
+}
+blockquote,
+blockquote p {
+  color: scale-color($eigengrau, $lightness: 35%);
+}
+
 
 // ** Regions ** //
 

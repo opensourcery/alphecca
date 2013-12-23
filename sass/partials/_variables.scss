@@ -96,6 +96,7 @@ $body-font-family: $default-font-family !default;
 $header-font-family: $default-font-family !default;
 $code-font-family: $monospace !default;
 
+
 // ** Typography ** //
 
 // The default font-size is set to 100% of the browser style sheet (usually 16px)
@@ -114,6 +115,7 @@ $rhythm-unit: 'rem' !default;
 // Vertical rhythm
 @include establish-baseline;
 
+
 // ** Cursors ** //
 
 $cursor-crosshair-value: crosshair !default;
@@ -122,8 +124,12 @@ $cursor-pointer-value: pointer !default;
 $cursor-help-value: help !default;
 $cursor-text-value: text !default;
 
+
 // ** Borders **//
 
 // We use these to make sure border radius matches unless we want it different.
 $global-radius: 3px !default;
 $global-rounded: 1000px !default;
+
+
+// ** Misc ** //

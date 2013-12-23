@@ -11,6 +11,7 @@
 // from a user. The effect of this class can be toggled with the jQuery show()
 // and hide() functions.
 // -- @see system.base.css
+
 %element-hidden {
   display: none;
 }
@@ -22,10 +23,42 @@
 // manner should be kept concise, to avoid unnecessary burden on the user.
 // "!important" is used to prevent unintentional overrides.
 // -- @see system.base.css
+
 %element-invisible {
   position: absolute !important;
   clip: rect(1px 1px 1px 1px); /* IE6, IE7 */
   clip: rect(1px, 1px, 1px, 1px);
   overflow: hidden;
   height: 1px;
+}
+
+
+// ** List Styles ** //
+
+%no-bullet {
+  list-style: none;
+  margin-#{$default-float}: 0;
+  li {
+    ul,
+    ol {
+      list-style: none;
+      margin-#{$default-float}: rem-calc(18);
+      margin-bottom: 0;
+    }
+  }
+}
+%square {
+  list-style-type: square;
+  margin-#{$default-float}: 1.1rem;
+  li ul { list-style: inherit; }
+}
+%circle {
+  list-style-type: circle;
+  margin-#{$default-float}: 1.1rem;
+  li ul { list-style: inherit; }
+}
+%disc {
+  list-style-type: disc;
+  margin-#{$default-float}: 1.1rem;
+  li ul { list-style: inherit; }
 }
