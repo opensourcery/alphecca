@@ -235,6 +235,37 @@ blockquote p {
 }
 
 
+// ** System ** //
+
+// * Messages * //
+div.messages {
+  @include border-radius($global-radius);
+  background-position: rem-calc(14) rem-calc(18);
+  background-repeat: no-repeat;
+  border: 1px solid;
+  margin: rem-calc(18 0);
+  padding: rem-calc(14 18 14 44);
+}
+div.status {
+  background-color: $pale-green;
+  background-image: url(../vendor/alphecca/images/status-16.png);
+  border-color: $light-green;
+  color: $green;
+}
+div.warning {
+  background-color: $pale-orange;
+  background-image: url(../vendor/alphecca/images/warning-16.png);
+  border-color: $light-orange;
+  color: $orange;
+}
+div.error {
+  background-color: $pale-red;
+  background-image: url(../vendor/alphecca/images/error-16.png);
+  border-color: $light-red;
+  color: $red;
+}
+
+
 // ** Regions ** //
 
 // * Header * //
