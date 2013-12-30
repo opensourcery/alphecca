@@ -8,31 +8,31 @@
 // ** Colors ** //
 
 // Red family : use for DANGER, ERROR, REQUIRED : Hue ~357°
-$red:           hsl(359, 77%, 40%) !default;
-$light-red:     hsl(357, 82%, 78%) !default;
-$pale-red:      hsl(355, 50%, 95%) !default;
+$red:           hsl(359, 77%, 40%) !default; // #b5171a
+$light-red:     hsl(357, 82%, 78%) !default; // #f5999d
+$pale-red:      hsl(355, 50%, 95%) !default; // #f9eced
 
 // Orange family: use for WARNING, ALERT : Hue ~39°
-$orange:        hsl(30, 100%, 45%) !default;
-$light-orange:  hsl(39, 99%, 72%) !default;
-$pale-orange:   hsl(60, 90%, 96%) !default;
+$orange:        hsl(30, 100%, 45%) !default; // #e67300
+$light-orange:  hsl(39, 99%, 72%) !default; // #fecd71
+$pale-orange:   hsl(60, 90%, 96%) !default; // #fefeec
 
 // Blue family: use for INFO, OPTIONAL ACTION, LINKS : Hue ~200°
-$blue:          hsl(200, 77%, 43%) !default;
-$light-blue:    hsl(200, 79%, 57%) !default;
-$pale-blue:     hsl(201, 52%, 95%) !default;
+$blue:          hsl(200, 77%, 43%) !default; // #198ac2
+$light-blue:    hsl(200, 79%, 57%) !default; // #3baee8
+$pale-blue:     hsl(201, 52%, 95%) !default; // #ecf4f9
 
 // Green family: use for STATUS, SUCCESS, SUGGESTED ACTION : Hue ~70°
-$green:         hsl(71, 78%, 28%) !default;
-$light-green:   hsl(70, 61%, 51%) !default;
-$pale-green:    hsl(69, 56%, 93%) !default;
+$green:         hsl(71, 78%, 28%) !default; // #6b7f10
+$light-green:   hsl(70, 61%, 51%) !default; // #b5ce36
+$pale-green:    hsl(69, 56%, 93%) !default; // #f4f7e3
 
 // Canonical grays, defined by gray_[n] where [n] is floor/10 value of hsl()
 // I define grays this way to allow me to redefine grays into more meaningful
 // variables later, and to help minimize proliferation of grays (this is hard)
-$gray_3:          hsl(0, 0%, 35%) !default;
-$gray_6:          hsl(0, 0%, 67%) !default;
-$gray_8:          hsl(0, 0%, 85%) !default;
+$gray_3:          hsl(0, 0%, 35%) !default; // #595959
+$gray_6:          hsl(0, 0%, 67%) !default; // #ababab
+$gray_8:          hsl(0, 0%, 85%) !default; // #d9d9d9
 
 // Gray aliases. Meaningful gray names, aliased to canonical grays
 $gray:            $gray_3 !default;
@@ -40,8 +40,8 @@ $light-gray:      $gray_6 !default;
 $pale-gray:       $gray_8 !default;
 $white:           white !default;
 $black:           black !default;
-$eigengrau:       hsl(240,14,10) !default;   // use instead of pure black for text or large fields
-$paperwhite:      hsl(0,0,98) !default;     // use instead of pure white for large fields
+$eigengrau:       hsl(240,14,10) !default;   // #16161d, use instead of pure black for text or large fields
+$paperwhite:      hsl(0,0,98) !default;     // #fafafa, use instead of pure white for large fields
 
 // Assign some colors
 $body-bg:           $paperwhite !default;
