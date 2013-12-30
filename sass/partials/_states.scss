@@ -37,3 +37,8 @@ ul {
   &.disc { @extend %disc; }
   &.no-bullet { @extend %no-bullet; }
 }
+
+// * Secondary tabs * //
+ul.tabs.secondary {
+  @include sub-nav(false);
+}

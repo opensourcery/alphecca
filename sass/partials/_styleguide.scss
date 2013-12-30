@@ -340,7 +340,6 @@ input[type="tel"],
 input[type="time"],
 input[type="url"],
 textarea {
-  @include border-radius(0);
   @include form-element;
   @if not $input-include-glowing-effect {
       @include single-transition(all, 0.15s, linear);
@@ -447,7 +446,7 @@ button, input[type="submit"], input[type="button"] {
 
 // * Messages * //
 div.messages {
-  @include border-radius($global-radius);
+  @include radius($global-radius);
   background-position: rem-calc(14) rem-calc(18);
   background-repeat: no-repeat;
   border: 1px solid;
@@ -501,6 +500,17 @@ div.description {
   background-color: tint($gray_8, 60%);
   border: 1px solid $gray_8;
   border-bottom: none;
+}
+
+
+// ** Blocks ** //
+
+// * User login * //
+#header #block-user-login {
+  ul {
+    @include sub-nav(false);
+    clear: both;
+  }
 }
 
 
