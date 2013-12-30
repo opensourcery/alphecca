@@ -235,6 +235,214 @@ blockquote p {
 }
 
 
+// ** Forms ** //
+
+// * Standard Forms * //
+form { margin: 0 0 rem-calc(16); }
+
+// * Label Styles * //
+label {
+  @include form-label;
+
+  // Styles for required inputs
+  .form-required {
+    color: $red;
+  }
+}
+
+// * Select * //
+select {
+  @include radius($global-radius);
+  background:
+    $paperwhite
+    url('data:image/svg+xml;base64, PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZlcnNpb249IjEuMSIgeD0iMHB4IiB5PSIwcHgiIHdpZHRoPSI2cHgiIGhlaWdodD0iM3B4IiB2aWV3Qm94PSIwIDAgNiAzIiBlbmFibGUtYmFja2dyb3VuZD0ibmV3IDAgMCA2IDMiIHhtbDpzcGFjZT0icHJlc2VydmUiPjxwb2x5Z29uIHBvaW50cz0iNS45OTIsMCAyLjk5MiwzIC0wLjAwOCwwICIvPjwvc3ZnPg==') no-repeat;
+  background-position-x: 97%;
+  background-position-y: center;
+  border: 1px solid scale-color($white, $lightness: -20%);
+  font-size: rem-calc(14);
+  padding: rem-calc(16) / 2;
+  -webkit-appearance: none !important;
+
+  &:hover {
+    background:
+      scale-color($paperwhite, $lightness: -3%)
+      url('data:image/svg+xml;base64, PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZlcnNpb249IjEuMSIgeD0iMHB4IiB5PSIwcHgiIHdpZHRoPSI2cHgiIGhlaWdodD0iM3B4IiB2aWV3Qm94PSIwIDAgNiAzIiBlbmFibGUtYmFja2dyb3VuZD0ibmV3IDAgMCA2IDMiIHhtbDpzcGFjZT0icHJlc2VydmUiPjxwb2x5Z29uIHBvaW50cz0iNS45OTIsMCAyLjk5MiwzIC0wLjAwOCwwICIvPjwvc3ZnPg==') no-repeat;
+    background-position-x: 97%;
+    background-position-y: center;
+    border-color: scale-color($white, $lightness: -40%);
+  }
+}
+
+// ::-ms-expand pseudo-element
+// http://msdn.microsoft.com/en-us/library/windows/apps/hh465742.aspx
+select::-ms-expand {
+  display: none;
+}
+
+// ???
+@-moz-document url-prefix() {
+  select { background: $paperwhite; }
+  select:hover { background: scale-color($paperwhite, $lightness: -3%); }
+}
+
+// Attach elements to the beginning or end of an input
+.prefix,
+.postfix { @include prefix-postfix-base; }
+
+// Adjust padding, alignment and radius if pre/post element is a button
+.postfix.button { @include button-size(false,false,false); @include postfix(false,true); }
+.prefix.button { @include button-size(false,false,false); @include prefix(false,true); }
+.prefix.button.radius { @include radius(0); @include side-radius(left, $global-radius); }
+.postfix.button.radius { @include radius(0); @include side-radius(right, $global-radius); }
+.prefix.button.round { @include radius(0); @include side-radius(left, $global-rounded); }
+.postfix.button.round { @include radius(0); @include side-radius(right, $global-rounded); }
+
+// Separate prefix and postfix styles when on span or label so buttons keep their own
+span.prefix, label.prefix { @include prefix();
+  &.radius { @include radius(0); @include side-radius(left, $global-radius); }
+}
+span.postfix, label.postfix { @include postfix();
+  &.radius { @include radius(0); @include side-radius(right, $global-radius); }
+}
+
+// Input groups will automatically style first and last elements of the group
+.input-group {
+  &.radius {
+    &>*:first-child,  &>*:first-child * {
+      @include side-radius($default-float, $global-radius);
+    }
+    &>*:last-child, &>*:last-child * {
+      @include side-radius($opposite-direction, $global-radius);
+    }
+  }
+  &.round {
+    &>*:first-child,  &>*:first-child * {
+      @include side-radius($default-float, $global-rounded);
+    }
+    &>*:last-child, &>*:last-child * {
+      @include side-radius($opposite-direction, $global-rounded);
+    }
+  }
+}
+
+// We use this to get basic styling on all basic form elements
+input[type="text"],
+input[type="password"],
+input[type="date"],
+input[type="datetime"],
+input[type="datetime-local"],
+input[type="month"],
+input[type="week"],
+input[type="email"],
+input[type="number"],
+input[type="search"],
+input[type="tel"],
+input[type="time"],
+input[type="url"],
+textarea {
+  @include border-radius(0);
+  @include form-element;
+  @if not $input-include-glowing-effect {
+      @include single-transition(all, 0.15s, linear);
+  }
+  -webkit-appearance: none;
+
+  // Error Handling
+  &.error {
+    @include form-error-color;
+  }
+}
+
+// Add height value for select elements to match text input height
+select {
+  height: (rem-calc(14) + (rem-calc(16) * 1.5) - rem-calc(1));
+}
+
+// Adjust margin for form elements below
+input[type="file"],
+input[type="checkbox"],
+input[type="radio"],
+select {
+  margin: 0 0 rem-calc(16) 0;
+}
+
+input[type="checkbox"] + label,
+input[type="radio"] + label {
+  display: inline-block;
+  margin-#{$default-float}: rem-calc(16) * .5;
+  margin-#{$opposite-direction}: rem-calc(16);
+  margin-bottom: 0;
+  vertical-align: baseline;
+}
+
+// Normalize file input width
+input[type="file"] {
+  width: 100%;
+}
+
+// We add basic fieldset styling
+fieldset {
+  @include fieldset;
+}
+
+
+// ** Buttons ** //
+
+// Default styles
+.button, button,
+input[type="submit"], input[type="button"] {
+  @include button-base;
+  @include button-size;
+  @include button-style($radius:true);
+
+  @include single-transition(background-color);
+
+  &.secondary { @include button-style($bg:$secondary-color); }
+  &.success   { @include button-style($bg:$success-color); }
+  &.alert     { @include button-style($bg:$alert-color); }
+
+  &.large  { @include button-size($padding:rem-calc(18)); }
+  &.small  { @include button-size($padding:rem-calc(14)); }
+  &.tiny   { @include button-size($padding:rem-calc(10)); }
+  &.expand { @include button-size($padding:null,$full-width:true); }
+
+  &.left-align  { text-align: left; text-indent: rem-calc(12); }
+  &.right-align { text-align: right; padding-right: rem-calc(12); }
+
+  &.radius { @include button-style($bg:false, $radius:true); }
+  &.round  { @include button-style($bg:false, $radius:$global-rounded); }
+
+  &.disabled, &[disabled] { @include button-style($bg:$primary-color, $disabled:true);
+    &.secondary { @include button-style($bg:$secondary-color, $disabled:true); }
+    &.success { @include button-style($bg:$success-color, $disabled:true); }
+    &.alert { @include button-style($bg:$alert-color, $disabled:true); }
+  }
+}
+button, input[type="submit"], input[type="button"] {
+  @include button-size($padding:false, $is-input:rem-calc(10));
+}
+
+// Button groups
+.button-group {
+  @include button-group-container;
+
+  @include button-group-style();
+
+  // Override default button styles
+  .button, button,
+  input[type="submit"], input[type="button"] {
+    @include button-style($radius:0);
+  }
+
+  &.radius { @include button-group-style($radius:$global-radius, $float:null); }
+  &.round { @include button-group-style($radius:$global-rounded, $float:null); }
+}
+.button-bar {
+  @include clearfix;
+  .button-group { @include button-group-container($styles:false, $float:true); }
+}
+
+
 // ** System ** //
 
 // * Messages * //
@@ -265,6 +473,19 @@ div.error {
   color: $red;
 }
 
+// * Inline Links * //
+ul.links.inline {
+  @include horizontal-list;
+  margin: rem-calc(18 0);
+}
+
+// * Description * //
+div.description {
+  color: $gray_3;
+  @include adjust-font-size-to(13px);
+  margin-bottom: rem-calc(9);
+}
+
 
 // ** Regions ** //
 
@@ -280,4 +501,17 @@ div.error {
   background-color: tint($gray_8, 60%);
   border: 1px solid $gray_8;
   border-bottom: none;
+}
+
+
+// ** Contrib ** //
+
+// * Chosen * //
+.chosen-container {
+  margin: 0 0 rem-calc(16) 0;
+}
+
+// * Vertical Tabs * //
+div.vertical-tabs {
+  background-color: $white;
 }
