@@ -28,3 +28,10 @@
 ul.tabs {
   @include sub-nav();
 }
+
+
+// ** Pager ** //
+ul.pager {
+  @include pagination-container(true);
+  @include pagination(true, true);
+}

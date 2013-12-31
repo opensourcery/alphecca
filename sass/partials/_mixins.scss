@@ -212,6 +212,87 @@ $sub-nav-item-divider-margin: rem-calc(12) !default;
 }
 
 
+// ** Pagination ** //
+
+// Style the pagination container. Currently only used when centering elements
+// $center - Default: false, Options: true
+@mixin pagination-container($center:false) {
+  @if $center { text-align: center; }
+}
+
+// Style the current list item. Do not assume that the current item has
+// an anchor <a> element.
+// $has-anchor - Default: false, Options: true
+@mixin pagination-current-item($has-anchor:false) {
+  @if $has-anchor {
+    a {
+      background: $primary-color;
+      color: $white;
+      cursor: default;
+      font-weight: bold;
+
+      &:hover,
+      &:focus { background: $primary-color; }
+    }
+  } @else {
+    @include radius($global-radius);
+    background: $primary-color;
+    color: $white;
+    cursor: default;
+    font-weight: bold;
+    height: auto;
+    padding: rem-calc(1 10 1);
+
+    &:hover,
+    &:focus { background: $primary-color; }
+  }
+}
+
+// We use this mixin to set the properties for creating pagination
+// $center - Left or center align the li elements. Default: false
+// $base-style - Sets base styles for pagination. Default: true, Options: false
+@mixin pagination($center:false, $base-style:true) {
+  @if $base-style {
+    display: block;
+    height: rem-calc(24);
+    margin-#{$default-float}: 0;
+    margin-#{$opposite-direction}: 0;
+    padding: 0;
+
+    li {
+      @include adjust-font-size-to(14px);
+      color: $gray_6;
+      height: rem-calc(24);
+      margin-#{$opposite-direction}: rem-calc(5);
+
+      a {
+        @include radius($global-radius);
+        color: $gray_6;
+        display: block;
+        padding: rem-calc(1 10 1);
+        text-decoration: none;
+      }
+
+      &:hover a,
+      a:focus { background: $gray_8; color: $secondary-color; }
+
+      &.pager-current { @include pagination-current-item(); }
+    }
+  }
+
+  // Left or center align the li elements
+  li {
+    @if $center {
+      display: inline-block;
+      float: none;
+    } @else {
+      display: block;
+      float: $default-float;
+    }
+  }
+}
+
+
 // ** Tables ** //
 
 @mixin table {
