@@ -17,9 +17,16 @@
 
 // ** Menus **//
 
+// * Sub-nav * //
 #header ul.menu:not(.sf-menu),
-#footer ul.menu:not(.sf-menu) {
+#footer ul.menu {
   @include sub-nav();
+}
+
+// * Side-nav * //
+#main [class*="sidebar"] ul.menu,
+#main [class*="column"] ul.menu {
+  @include side-nav;
 }
 
 
@@ -31,6 +38,7 @@ ul.tabs {
 
 
 // ** Pager ** //
+
 ul.pager {
   @include pagination-container(true);
   @include pagination(true, true);

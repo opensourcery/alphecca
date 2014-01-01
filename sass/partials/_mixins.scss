@@ -212,6 +212,53 @@ $sub-nav-item-divider-margin: rem-calc(12) !default;
 }
 
 
+// ** Side-nav ** //
+
+@mixin side-nav {
+  list-style-position: inside;
+  list-style-type: none;
+  margin: rem-calc(14 0);
+  padding: 0;
+
+  li {
+    @include adjust-font-size-to(14px);
+
+    a {
+      border-top: 1px solid $gray_8;
+      display: block;
+      padding: rem-calc(7);
+    }
+
+    > &.first > a:first-child {
+      border-top: none;
+    }
+
+    &.active > a:first-child,
+    &.active-trail > a:first-child {
+      background: tint($gray_8, 80%);
+      color: $gray_3;
+      font-weight: normal;
+    }
+
+    // Only one sub-level recommended since sidebars/columns
+    // aren't usually wide enough to accommodate additional levels
+    // without unsightly link text wrapping.
+    ul {
+      margin: 0;
+
+      a {
+        padding-left: rem-calc(14);
+
+        &:before {
+          @include adjust-font-size-to(11px);
+          content: "↳\00a0\00a0";
+        }
+      }
+    }
+  }
+}
+
+
 // ** Pagination ** //
 
 // Style the pagination container. Currently only used when centering elements
