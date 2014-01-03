@@ -37,23 +37,23 @@
 // Just toggles off the Element invisible effect. Useful for state changing.
 
 %element-invisible-off {
- position: static !important;
- clip: auto;
- height: auto;
- width: auto;
- overflow: auto;
+  position: static !important;
+  clip: auto;
+  height: auto;
+  width: auto;
+  overflow: auto;
 }
 
 // ** Element Focusable ** //
 // Invisible except when focused.
 
 %element-focusable {
- @extend %element-invisible;
+  @extend %element-invisible;
 
- &:active,
- &:focus {
-   @extend %element-invisible-off;
- }
+  &:active,
+  &:focus {
+    @extend %element-invisible-off;
+  }
 }
 
 
