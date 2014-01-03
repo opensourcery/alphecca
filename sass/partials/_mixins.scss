@@ -131,6 +131,82 @@
 }
 
 
+// ** Main-nav ** //
+
+// Superfish
+@mixin sf-main-nav {
+  @include clearfix();
+  @include radius($global-radius);
+  background-color: $gray_3;
+
+  li {
+    @include adjust-font-size-to(14px);
+  }
+
+  // Level one navigation
+  > li.sf-depth-1 {
+    border-right: 1px solid $gray_6;
+
+    &.first > a {
+      @include side-radius(left);
+    }
+
+    &.last {
+      border-right: none;
+
+      > a {
+        @include side-radius(right);
+      }
+    }
+
+    &:hover > ul,
+    &.sfHover > ul {
+      top: 100%;
+    }
+  }
+
+  // Global links
+  a {
+    @include block-glowing-effect(hover, 0.15s, scale-color($black, $lightness: 20%));
+    @include single-transition(background-color);
+    color: $white;
+    display: block;
+    padding: rem-calc(14 18);
+    text-decoration: none;
+
+    &:hover,
+    &:active {
+      @include radius($global-radius);
+      background-color: $eigengrau;
+    }
+  }
+
+  // Megamenu dropdown
+  ul.sf-megamenu {
+    @include side-radius(bottom);
+    background-color: $gray_3;
+
+    a {
+      padding: rem-calc(7 14);
+
+      &:not(.sf-depth-2) {
+        padding: rem-calc(7 21);
+
+        &:before {
+          @include adjust-font-size-to(11px);
+          content: "↳\00a0\00a0";
+        }
+      }
+    }
+
+    .last.sf-no-children a,
+    .firstandlast.sf-no-children a {
+      @include side-radius(bottom);
+    }
+  }
+}
+
+
 // ** Sub-nav ** //
 
 $sub-nav-item-divider: "|" !default;

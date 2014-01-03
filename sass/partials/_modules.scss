@@ -17,6 +17,12 @@
 
 // ** Menus **//
 
+// * Main-nav * //
+// Superfish
+ul.sf-menu {
+  @include sf-main-nav;
+}
+
 // * Sub-nav * //
 #header ul.menu:not(.sf-menu),
 #footer ul.menu {
