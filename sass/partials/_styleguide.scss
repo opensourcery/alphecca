@@ -455,19 +455,22 @@ div.messages {
 }
 div.status {
   background-color: $pale-green;
-  background-image: url(../vendor/alphecca/images/status-16.png);
+  background-image: url(../vendor/alphecca/images/icons/status.svg);
+  background-size: 16px 16px;
   border-color: $light-green;
   color: $green;
 }
 div.warning {
   background-color: $pale-orange;
-  background-image: url(../vendor/alphecca/images/warning-16.png);
+  background-image: url(../vendor/alphecca/images/icons/warning.svg);
+  background-size: 16px 16px;
   border-color: $light-orange;
   color: $orange;
 }
 div.error {
   background-color: $pale-red;
-  background-image: url(../vendor/alphecca/images/error-16.png);
+  background-image: url(../vendor/alphecca/images/icons/error.svg);
+  background-size: 16px 16px;
   border-color: $light-red;
   color: $red;
 }
