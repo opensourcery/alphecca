@@ -166,7 +166,7 @@
   }
 
   // Global links
-  a {
+  a[class*="sf-depth"] {
     @include block-glowing-effect(hover, 0.15s, scale-color($black, $lightness: 20%));
     @include single-transition(background-color);
     color: $white;
@@ -188,20 +188,61 @@
 
     a {
       padding: rem-calc(7 14);
+    }
 
-      &:not(.sf-depth-2) {
-        padding: rem-calc(7 21);
+    .sf-no-children a {
+      padding: rem-calc(7 21);
 
-        &:before {
-          @include adjust-font-size-to(11px);
-          content: "↳\00a0\00a0";
-        }
+      &:before {
+        @include adjust-font-size-to(11px);
+        content: "↳\00a0\00a0";
       }
     }
 
     .last.sf-no-children a,
     .firstandlast.sf-no-children a {
       @include side-radius(bottom);
+    }
+  }
+
+  // Superfish accordion
+  &.sf-accordion {
+    @include radius(0);
+    @include side-radius(bottom);
+
+    > li.sf-depth-1 {
+      border-top: 1px solid $gray_6;
+      border-right: none;
+
+      > ul {
+        @include box-shadow($eigengrau 0px 2px 10px inset);
+        background-color: $gray_6;
+
+        .sf-no-children a {
+          padding: rem-calc(7 21);
+
+          &:before {
+            @include adjust-font-size-to(11px);
+            content: "↳\00a0\00a0";
+          }
+        }
+      }
+
+      // Sub-menu trigger
+      .sf-accordion-button {
+        @include replace-text('../vendor/alphecca/images/icons/menu-open-white.svg', 50%, 50%);
+        background-color: transparent;
+        background-size: 22px 22px;
+        color: $white;
+        display: block;
+        height: 22px;
+        padding: 0;
+        position: absolute;
+        right: 10px;
+        top: 14px;
+        width: 22px;
+        z-index: 100;
+      }
     }
   }
 }

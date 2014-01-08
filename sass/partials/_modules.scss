@@ -19,6 +19,36 @@
 
 // * Main-nav * //
 // Superfish
+.sf-accordion-toggle a {
+  @include adjust-font-size-to(14px, 1.33333333333333);
+  @include block-glowing-effect(hover, 0.15s, scale-color($black, $lightness: 20%));
+  @include radius($global-radius);
+  @include single-transition(background-color);
+  background-color: $gray_3;
+  background-image: url(../vendor/alphecca/images/icons/menu-white.svg);
+  background-position: 9px 50%;
+  background-repeat: no-repeat;
+  background-size: 32px 32px;
+  color: $white;
+  display: block;
+  height: 50px;
+  padding: rem-calc(9 9 9 50);
+  text-decoration: none;
+  text-transform: uppercase;
+  width: 100%;
+
+  &.sf-expanded {
+    @include radius(0);
+    @include side-radius(top);
+  }
+
+  &:hover,
+  &:active {
+    @include radius($global-radius);
+    background-color: $eigengrau;
+  }
+}
+
 ul.sf-menu {
   @include sf-main-nav;
 }
