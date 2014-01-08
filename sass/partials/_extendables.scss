@@ -25,23 +25,23 @@
 // -- @see system.base.css
 
 %element-invisible {
-  position: absolute !important;
   clip: rect(1px 1px 1px 1px); /* IE6, IE7 */
   clip: rect(1px, 1px, 1px, 1px);
-  overflow: hidden;
   height: 1px;
+  overflow: hidden;
+  position: absolute !important;
 }
 
 
 // ** Element Invisible Off ** //
-// Just toggles off the Element invisible effect. Useful for state changing.
+// Just toggles off the Element Invisible effect. Useful for state changing.
 
 %element-invisible-off {
-  position: static !important;
   clip: auto;
   height: auto;
-  width: auto;
   overflow: auto;
+  position: static !important;
+  width: auto;
 }
 
 // ** Element Focusable ** //
