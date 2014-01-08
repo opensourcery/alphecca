@@ -42,3 +42,8 @@ ul {
 ul.tabs.secondary {
   @include sub-nav(false);
 }
+
+// * Main-nav * //
+ul.sf-menu.sf-accordion {
+  @include sf-main-nav-accordion;
+}
