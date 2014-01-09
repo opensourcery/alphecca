@@ -231,18 +231,23 @@
 
     // Sub-menu trigger
     .sf-accordion-button {
+      @include radius($global-radius);
       @include replace-text('../vendor/alphecca/images/icons/menu-open-white.svg', 50%, 50%);
-      background-color: transparent;
+      background-color: $gray_6;
       background-size: 22px 22px;
       color: $white;
       display: block;
-      height: 22px;
-      padding: 0;
+      height: 26px;
+      padding: 2px 3px;
       position: absolute;
-      right: 10px;
+      right: 18px;
       top: 14px;
-      width: 22px;
+      width: 28px;
       z-index: 100;
+    }
+
+    > .sf-accordion-button {
+      background-color: $gray_3;
     }
   }
 }

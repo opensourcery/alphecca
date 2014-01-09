@@ -4,6 +4,8 @@
 // Code here shouldn’t generate any selectors or rules.
 ////////////////////////
 
+// ** Styleguide ** //
+
 // * Headings & Anchors * //
 a:link {
   h1, h2, h3, h4, h5, h6,
@@ -37,6 +39,37 @@ ul {
   &.disc { @extend %disc; }
   &.no-bullet { @extend %no-bullet; }
 }
+
+
+// ** Layouts ** //
+
+// * Header * //
+#header {
+  .block {
+    @include breakpoint($medium) {
+      clear: right;
+      float: right;
+      margin-left: rem-calc(18);
+    }
+  }
+
+  .block-superfish {
+    @include breakpoint($medium) {
+      clear: both;
+      float: none;
+      margin-left: 0;
+    }
+  }
+
+  #block-user-login {
+    @include breakpoint($xlarge) {
+      clear: none;
+    }
+  }
+}
+
+
+// ** Modules ** //
 
 // * Secondary tabs * //
 ul.tabs.secondary {
