@@ -211,12 +211,13 @@ abbr {
 
 // * Blockquotes * //
 blockquote {
+  background-color: tint($gray_8, 80%);
   border-#{$default-float}: 1px solid $gray_8;
   margin: rem-calc(0 0 18);
-  padding: rem-calc(9 18 0 18);
+  padding: rem-calc(3 18);
 
   cite {
-    color: scale-color($eigengrau, $lightness: 23%);
+    color: $gray_6;
     display: block;
     font-size: rem-calc(14);
     &:before {
@@ -225,13 +226,13 @@ blockquote {
 
     a,
     a:visited {
-      color: scale-color($eigengrau, $lightness: 23%);
+      color: $gray_6;
     }
   }
 }
 blockquote,
 blockquote p {
-  color: scale-color($eigengrau, $lightness: 35%);
+  color: scale-color($gray_3, $lightness: 35%);
 }
 
 

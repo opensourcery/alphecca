@@ -472,6 +472,11 @@ $sub-nav-item-divider-margin: rem-calc(12) !default;
   margin-bottom: rem-calc(18);
   width: 100%;
 
+  caption {
+    padding-bottom: rem-calc(9);
+    text-align: left;
+  }
+
   thead,
   tfoot {
     background: tint($gray_8, 60%);
