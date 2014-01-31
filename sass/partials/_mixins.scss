@@ -232,7 +232,7 @@
     // Sub-menu trigger
     .sf-accordion-button {
       @include radius($global-radius);
-      @include replace-text('../vendor/alphecca/images/icons/menu-open-white.svg', 50%, 50%);
+      @include replace-text('../images/icons/menu-open-white.svg', 50%, 50%);
       background-color: $gray_6;
       background-size: 22px 22px;
       color: $white;
