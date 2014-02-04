@@ -823,7 +823,7 @@ $input-include-glowing-effect: true !default;
 
 // We use this to control styles for button groups
 @mixin button-group-style($radius:true, $float:$default-float) {
-  .button, button, input[type="submit"], input[type="button"] {
+  .button, button, input[type="submit"], input[type="button"], #edit-cancel {
     border-#{$opposite-direction}: 1px solid;
     border-color: $body-bg;
 
@@ -843,13 +843,13 @@ $input-include-glowing-effect: true !default;
 
   // We use these to control left and right radius on first/last buttons in the group
   @if $radius == true {
-    .button, button, input[type="submit"], input[type="button"] {
+    .button, button, input[type="submit"], input[type="button"], #edit-cancel {
       &:first-child { @include side-radius($default-float, $global-radius); }
       &:last-child { @include side-radius($opposite-direction, $global-radius); }
     }
   }
   @else if $radius {
-    .button, button, input[type="submit"], input[type="button"] {
+    .button, button, input[type="submit"], input[type="button"], #edit-cancel {
       &:first-child { @include side-radius($default-float, $radius); }
       &:last-child { @include side-radius($opposite-direction, $radius); }
     }

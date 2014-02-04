@@ -421,7 +421,7 @@ input[type="submit"], input[type="button"] {
   }
 }
 button, input[type="submit"], input[type="button"] {
-  @include button-size($padding:false, $is-input:rem-calc(10));
+  @include button-size($padding:false, $is-input:rem-calc(12));
 }
 
 // Button groups
@@ -489,6 +489,12 @@ div.description {
   color: $gray_3;
   @include adjust-font-size-to(13px);
   margin-bottom: rem-calc(9);
+}
+
+// * Forms * //
+#edit-cancel {
+  @include button($bg:$gray_8);
+  @include single-transition(background-color);
 }
 
 
