@@ -500,6 +500,17 @@ div.description {
   @include single-transition(background-color);
 }
 
+// * Tables * //
+.draggable {
+  a.tabledrag-handle {
+    height: (rem-calc(14) + (rem-calc(16) * 1.5) - rem-calc(1));
+
+    .handle {
+      @include box-sizing(content-box);
+    }
+  }
+}
+
 
 // ** Regions ** //
 
