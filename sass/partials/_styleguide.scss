@@ -87,7 +87,10 @@ h6 {
 // * Images * //
 // Get rid of gap under images by making them display: inline-block; by default
 img {
+  @include radius($global-radius);
+  border: 1px solid $gray_8;
   display: inline-block;
+  padding: rem-calc(9);
   vertical-align: middle;
 
   a & {
