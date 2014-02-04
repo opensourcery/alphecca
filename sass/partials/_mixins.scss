@@ -160,6 +160,7 @@
     }
 
     &:hover > ul,
+    &:focus > ul,
     &.sfHover > ul {
       top: 100%;
     }
@@ -175,6 +176,7 @@
     text-decoration: none;
 
     &:hover,
+    &:focus,
     &:active {
       @include radius($global-radius);
       background-color: $eigengrau;
@@ -275,7 +277,8 @@ $sub-nav-item-divider-margin: rem-calc(12) !default;
       color: $secondary-color;
       text-decoration: none;
 
-      &:hover {
+      &:hover,
+      &:focus {
 	color: $gray_6;
       }
     }
@@ -287,7 +290,8 @@ $sub-nav-item-divider-margin: rem-calc(12) !default;
       cursor: default;
       padding: rem-calc(3 16);
 
-      &:hover {
+      &:hover,
+      &:focus {
 	background: $anchor-font-color-hover;
       }
     }
@@ -443,6 +447,7 @@ $sub-nav-item-divider-margin: rem-calc(12) !default;
       }
 
       &:hover a,
+      &:focus a,
       a:focus { background: $gray_8; color: $secondary-color; }
 
       &.pager-current { @include pagination-current-item(); }
@@ -742,17 +747,33 @@ $input-include-glowing-effect: true !default;
     background: $bg none;
     border-color: scale-color($bg, $lightness: -20%);
 
+    &:link,
+    &:visited {
+      background: $bg none;
+      border-color: scale-color($bg, $lightness: -20%);
+      text-decoration: none;
+    }
+
     &:hover,
-    &:focus { background-color: scale-color($bg, $lightness: -20%); }
+    &:focus {
+      background-color: scale-color($bg, $lightness: -20%);
+      text-decoration: none;
+    }
 
     // We control the text color for you based on the background color.
     @if $bg-lightness > 70% {
       color: $gray_3;
+
+      &:link,
+      &:visited,
       &:hover,
       &:focus { color: $gray_3; }
     }
     @else {
       color: $white;
+
+      &:link,
+      &:visited,
       &:hover,
       &:focus { color: $white; }
     }

@@ -43,6 +43,7 @@
   }
 
   &:hover,
+  &:focus,
   &:active {
     @include radius($global-radius);
     background-color: $eigengrau;
@@ -352,7 +353,8 @@ $orbit-timer-show-progress-bar: true !default;
     width: 36px;
     z-index: 10;
 
-    &:hover {
+    &:hover,
+    &:focus {
       background-color: rgba(0,0,0,0.3);
     }
 
@@ -375,7 +377,8 @@ $orbit-timer-show-progress-bar: true !default;
       border-#{$opposite-direction}-style: solid;
     }
 
-    &:hover > span {
+    &:hover > span,
+    &:focus > span {
       border-#{$opposite-direction}-color: $white;
     }
   }
@@ -390,7 +393,8 @@ $orbit-timer-show-progress-bar: true !default;
       margin-#{$default-float}: -4px;
     }
 
-    &:hover > span {
+    &:hover > span,
+    &:focus > span {
       border-#{$default-float}-color: $white;
     }
   }

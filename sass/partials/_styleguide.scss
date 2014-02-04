@@ -38,7 +38,8 @@ a {
     color: $anchor-font-color-visited;
     text-decoration: none;
   }
-  &:hover {
+  &:hover,
+  &:focus {
     color: $anchor-font-color-hover;
     text-decoration: underline;
   }
@@ -264,7 +265,8 @@ select {
   padding: rem-calc(16) / 2;
   -webkit-appearance: none !important;
 
-  &:hover {
+  &:hover,
+  &:focus {
     background:
       scale-color($paperwhite, $lightness: -3%)
       url('data:image/svg+xml;base64, PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZlcnNpb249IjEuMSIgeD0iMHB4IiB5PSIwcHgiIHdpZHRoPSI2cHgiIGhlaWdodD0iM3B4IiB2aWV3Qm94PSIwIDAgNiAzIiBlbmFibGUtYmFja2dyb3VuZD0ibmV3IDAgMCA2IDMiIHhtbDpzcGFjZT0icHJlc2VydmUiPjxwb2x5Z29uIHBvaW50cz0iNS45OTIsMCAyLjk5MiwzIC0wLjAwOCwwICIvPjwvc3ZnPg==') no-repeat;
@@ -283,7 +285,7 @@ select::-ms-expand {
 // ???
 @-moz-document url-prefix() {
   select { background: $paperwhite; }
-  select:hover { background: scale-color($paperwhite, $lightness: -3%); }
+  select:hover, select:focus { background: scale-color($paperwhite, $lightness: -3%); }
 }
 
 // Attach elements to the beginning or end of an input
