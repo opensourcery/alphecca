@@ -138,9 +138,18 @@
   @include clearfix();
   @include radius($global-radius);
   background-color: $gray_3;
+  z-index: 97; // override Superfish library
 
   li {
     @include adjust-font-size-to(14px);
+    z-index: 98; // override Superfish library
+  }
+
+  li:hover,
+  li.sfHover,
+  li:hover ul,
+  li.sfHover ul {
+    z-index: 99; // override Superfish library
   }
 
   // Level one navigation
