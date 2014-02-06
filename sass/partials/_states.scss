@@ -41,6 +41,13 @@ ul {
   &.no-bullet { @extend %no-bullet; }
 }
 
+// * Feed icon * //
+.feed-icon img {
+  @include radius(0);
+  border: none;
+  padding: 0;
+}
+
 
 // ** Layouts ** //
 
