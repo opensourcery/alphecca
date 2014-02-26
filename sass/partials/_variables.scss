@@ -130,3 +130,90 @@ $cursor-text-value: text !default;
 // We use these to make sure border radius matches unless we want it different.
 $global-radius: 3px !default;
 $global-rounded: 1000px !default;
+
+
+////////////////////////
+// Toggle Alphecca Styles
+//
+// Override inclusion of Alphecca styles in your theme.
+////////////////////////
+
+// * Styleguide * //
+$styleguide-global: true !default;
+
+$styleguide-anchors: true !default;
+
+$styleguide-headings: true !default;
+
+$styleguide-images: true !default;
+
+$styleguide-tables: true !default;
+
+$styleguide-typo-defaults: true !default;
+
+$styleguide-lists: true !default;
+$styleguide-unordered-lists: true !default;
+$styleguide-ordered-lists: true !default;
+$styleguide-definition-lists: true !default;
+
+$styleguide-abbreviations: true !default;
+
+$styleguide-blockquotes: true !default;
+
+$styleguide-forms: true !default;
+$styleguide-label-styles: true !default;
+$styleguide-select: true !default;
+$styleguide-post-pre-fix: true !default;
+$styleguide-input-groups: true !default;
+$styleguide-inputs: true !default;
+$styleguide-fieldset: true !default;
+
+$styleguide-buttons: true !default;
+$styleguide-button-groups: true !default;
+
+$styleguide-system-messages: true !default;
+$styleguide-system-inline-links: true !default;
+$styleguide-system-description: true !default;
+$styleguide-system-forms: true !default;
+$styleguide-system-tables: true !default;
+
+$styleguide-regions-header: true !default;
+$styleguide-regions-footer: true !default;
+
+$styleguide-header-block-user-login: true !default;
+
+$styleguide-contrib-chosen: true !default;
+$styleguide-contrib-vertical-tabs: true !default;
+
+// * Layout * //
+$layout-header: true !default;
+$layout-footer: true !default;
+
+$layout-header-block-views-search: true !default;
+$layout-header-block-user-login: true !default;
+$layout-header-block-user-menu: true !default;
+
+// * Modules * //
+$modules-breadcrumb: true !default;
+
+$modules-menus-main-nav-superfish: true !default;
+$modules-menus-sub-nav: true !default;
+$modules-menus-side-nav: true !default;
+
+$modules-tabs: true !default;
+
+$modules-pager: true !default;
+
+$modules-comments: true !default;
+
+$modules-orbit-slider: true !default;
+
+// * States * //
+$states-styleguide-headings-anchors: true !default;
+$states-styleguide-unordered-lists: true !default;
+$states-styleguide-feed-icon: true !default;
+
+$states-layout-header-blocks: true !default;
+
+$states-modules-secondary-tabs: true !default;
+$states-modules-main-nav-accordion: true !default;

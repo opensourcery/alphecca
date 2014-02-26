@@ -7,75 +7,85 @@
 // ** Regions ** //
 
 // * Header * //
-#header {
-  margin-bottom: rem-calc(18);
-  padding: rem-calc(18 0);
+@if $layout-header {
+  #header {
+    margin-bottom: rem-calc(18);
+    padding: rem-calc(18 0);
 
-  #site-name {
-    float: left;
-    margin-top: rem-calc(10);
+    #site-name {
+      float: left;
+      margin-top: rem-calc(10);
+    }
   }
 }
 
 // * Footer * //
-#footer {
-  margin-top: rem-calc(36);
-  padding: rem-calc(14 18 18);
+@if $layout-footer {
+  #footer {
+    margin-top: rem-calc(36);
+    padding: rem-calc(14 18 18);
+  }
 }
 
 
 // ** Blocks ** //
 
 // * Views Search * //
-#header .views-exposed-form {
-  .views-exposed-widget {
-    padding: 0 rem-calc(9) 0 0;
-  }
+@if $layout-header-block-views-search {
+  #header .views-exposed-form {
+    .views-exposed-widget {
+      padding: 0 rem-calc(9) 0 0;
+    }
 
-  .views-submit-button {
-    padding-right: 0;
+    .views-submit-button {
+      padding-right: 0;
 
-    .form-submit {
-      margin-top: rem-calc(32);
+      .form-submit {
+        margin-top: rem-calc(32);
+      }
     }
   }
 }
 
 // * User login * //
-#header #block-user-login {
-  .form-item-name,
-  .form-item-persistent-login {
-    clear: left;
-    float: left;
-    padding-right: rem-calc(9);
-  }
+@if $layout-header-block-user-login {
+  #header #block-user-login {
+    .form-item-name,
+    .form-item-persistent-login {
+      clear: left;
+      float: left;
+      padding-right: rem-calc(9);
+    }
 
-  .form-item-pass,
-  .form-actions {
-    clear: right;
-    float: right;
-  }
+    .form-item-pass,
+    .form-actions {
+      clear: right;
+      float: right;
+    }
 
-  .form-item-name,
-  .form-item-pass {
-    width: 50%;
-  }
+    .form-item-name,
+    .form-item-pass {
+      width: 50%;
+    }
 
-  .form-item-persistent-login,
-  .form-actions {
-    margin-bottom: rem-calc(9);
+    .form-item-persistent-login,
+    .form-actions {
+      margin-bottom: rem-calc(9);
+    }
   }
 }
 
 // * User menu * //
-#header #block-system-user-menu {
-  h2 {
-    float: right;
-    margin: rhythm(0.25, 30px) 0;
-  }
+@if $layout-header-block-user-menu {
+  #header #block-system-user-menu {
+    h2 {
+      float: right;
+      margin: rhythm(0.25, 30px) 0;
+    }
 
-  .content {
-    clear: right;
-    float: right;
+    .content {
+      clear: right;
+      float: right;
+    }
   }
 }
