@@ -458,12 +458,18 @@
 
 @if $modules-dropdown {
   #block-user-login {
+    > h2.button {
+      @include dropdown-button();
+    }
     .content[data-dropdown-content] {
       @include dropdown-container($content:content, $triangle:true, $max-width:300px, $min-width:300px);
     }
   }
 
   #block-system-user-menu {
+    > h2.button {
+      @include dropdown-button();
+    }
     .content[data-dropdown-content] {
       @include dropdown-container();
 
