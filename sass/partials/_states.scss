@@ -100,3 +100,13 @@
     @include sf-main-nav-accordion;
   }
 }
+
+// * Dropdown * //
+@if $states-modules-dropdown {
+  #block-user-login,
+  #block-system-user-menu {
+    h2.open[data-dropdown] {
+      @include dropdown-button-open();
+    }
+  }
+}

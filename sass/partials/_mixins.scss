@@ -1052,3 +1052,41 @@ $input-include-glowing-effect: true !default;
     &:before { border-color: $pip-color transparent transparent transparent; }
   }
 }
+
+@mixin dropdown-button-open($padding:medium, $pip-color:$white, $base-style:true) {
+  @if $base-style {
+    &:before { border-color: transparent transparent $white transparent; }
+  }
+
+  // If we're dealing with tiny buttons, use these styles
+  @if $padding == tiny {
+    &:before {
+      margin-top: rem-calc(-6);
+    }
+  }
+
+  // If we're dealing with small buttons, use these styles
+  @if $padding == small {
+    &:before {
+      margin-top: rem-calc(-7);
+    }
+  }
+
+  // If we're dealing with default (medium) buttons, use these styles
+  @if $padding == medium {
+    &:before {
+      margin-top: rem-calc(-9);
+    }
+  }
+
+  // If we're dealing with large buttons, use these styles
+  @if $padding == large {
+    &:before {
+      margin-top: rem-calc(-11);
+    }
+  }
+
+  @if $pip-color {
+    &:before { border-color: transparent transparent $pip-color transparent; }
+  }
+}

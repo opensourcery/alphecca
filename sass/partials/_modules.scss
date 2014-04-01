@@ -454,11 +454,11 @@
 }
 
 
-// ** Dropdown (button/menu) ** //
+// ** Dropdown ** //
 
 @if $modules-dropdown {
   #block-user-login {
-    > h2.button {
+    h2.button[data-dropdown] {
       @include dropdown-button();
     }
     .content[data-dropdown-content] {
@@ -467,7 +467,7 @@
   }
 
   #block-system-user-menu {
-    > h2.button {
+    h2.button[data-dropdown] {
       @include dropdown-button();
     }
     .content[data-dropdown-content] {
