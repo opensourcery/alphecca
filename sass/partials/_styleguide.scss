@@ -320,6 +320,7 @@
     }
   }
 
+  // * Post- & Pre-fix * //
   @if $styleguide-post-pre-fix {
     // Attach elements to the beginning or end of an input
     .prefix,
@@ -342,6 +343,7 @@
     }
   }
 
+  // * Input Groups * //
   @if $styleguide-input-groups {
     // Input groups will automatically style first and last elements of the group
     .input-group {
@@ -364,6 +366,7 @@
     }
   }
 
+  // * Inputs * //
   @if $styleguide-inputs {
     // We use this to get basic styling on all basic form elements
     input[type="text"],
@@ -420,6 +423,7 @@
     }
   }
 
+  // * Fieldset * //
   @if $styleguide-fieldset {
     // We add basic fieldset styling
     fieldset {
