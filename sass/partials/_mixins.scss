@@ -913,7 +913,7 @@ $input-include-glowing-effect: true !default;
 
   @if $content == list {
     background-color: $background-color;
-    border: 1px solid darken($white, 20%);
+    border: 1px solid shade($white, 20%);
     font-size: $rem-base;
     height: auto;
     width: 100%;
@@ -921,7 +921,7 @@ $input-include-glowing-effect: true !default;
   }
   @else if $content == content {
     background-color: $background-color;
-    border: 1px solid darken($white, 20%);
+    border: 1px solid shade($white, 20%);
     font-size: $rem-base;
     height: auto;
     padding: rem-calc(20);
@@ -933,14 +933,14 @@ $input-include-glowing-effect: true !default;
     margin-top: 2px;
 
     &:before {
-      @include css-triangle(6px, $white, bottom);
+      @include css-triangle(6px, $background-color, bottom);
       #{$default-float}: 10px;
       position: absolute;
       top: -(6px * 2);
       z-index: 500;
     }
     &:after {
-      @include css-triangle(6px + 1, $white, bottom);
+      @include css-triangle(6px + 1, $background-color, bottom);
       #{$default-float}: 10px - 1;
       position: absolute;
       top: -((6px + 1) * 2);
