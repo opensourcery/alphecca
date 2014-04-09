@@ -40,7 +40,7 @@
 //    font-style: normal;
 //}
 
-@include declare-font-face('SourceSansPro', 'SourceSansPro-BoldIt');
+@include declare-font-face('SourceSansPro', 'SourceSansPro-BoldIt', bold, italic);
 //@font-face {
 //    font-family: 'SourceSansPro';
 //    src: url('/fonts/sourcesans/SourceSansPro-BoldIt-webfont.eot');
