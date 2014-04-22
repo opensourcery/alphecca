@@ -56,7 +56,7 @@
                   settings = target.data('dropdown-init');
               if (settings.is_hover) self.close.call(self, $this);
             }
-          }.bind(this), 150);
+          }.bind(this), 0); // @see http://foundation.zurb.com/forum/posts/680-dropdown-does-not-disappear-when-displaying-another-dropdown
         })
         .on('click.fndtn.dropdown', function (e) {
           var parent = $(e.target).closest('[data-dropdown-content]');
