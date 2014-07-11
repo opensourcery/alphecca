@@ -117,6 +117,65 @@
   }
 }
 
+// We use this to create equilateral triangles
+// $triangle-size - Used to set border-size. No default, set a px or em size.
+// $triangle-color - Used to set border-color which makes up triangle. No default
+// $triangle-direction - Used to determine which direction triangle
+// points. Options: top, bottom, left, right. Default top.
+// $narrow - Used to half the width of the triangle for more "directionness.
+// Default: false;
+@mixin css-triangle-rounded($triangle-size, $triangle-color, $triangle-direction:top, $narrow:false) {
+  width: $triangle-size;
+  height: $triangle-size;
+  position: relative;
+  background-color: $triangle-color;
+  text-align: left;
+  border-top-right-radius: 30%;
+  &:before,
+  &:after {
+    content: '';
+    position: absolute;
+    background-color: inherit;
+    width: $triangle-size;
+    height: $triangle-size;
+    border-top-right-radius: 30%;
+  }
+  &:before {
+    transform: rotate(-135deg) skewX(-45deg) scale(1.414,.707) translate(0,-50%);
+  }
+  &:after {
+    transform: rotate(135deg) skewY(-45deg) scale(.707,1.414) translate(50%);
+  }
+  @if ($narrow == false) {
+    @if ($triangle-direction == top) {
+      transform: rotate(-60deg) skewX(-30deg) scale(1,.866);
+    }
+    @if ($triangle-direction == bottom) {
+      transform: rotate(120deg) skewX(-30deg) scale(1,.866);
+    }
+    @if ($triangle-direction == left) {
+      transform: rotate(-150deg) skewX(-30deg) scale(1,.866);
+    }
+    @if ($triangle-direction == right) {
+      transform: rotate(30deg) skewX(-30deg) scale(1,.866);
+    }
+  }
+  @if ($narrow == true) {
+    @if ($triangle-direction == top) {
+      transform: rotate(-45deg);
+    }
+    @if ($triangle-direction == bottom) {
+      transform: rotate(135deg);
+    }
+    @if ($triangle-direction == left) {
+      transform: rotate(-135deg);
+    }
+    @if ($triangle-direction == right) {
+      transform: rotate(45deg);
+    }
+  }
+}
+
 
 // ** Breadcrumb ** //
 
