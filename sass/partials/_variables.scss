@@ -215,9 +215,11 @@ $modules-pager: true !default;
 
 $modules-comments: true !default;
 
-$modules-orbit-slider: true !default;
+$modules-f-orbit-slider: true !default;
 
-$modules-dropdown: true !default;
+$modules-f-dropdown: true !default;
+
+$modules-f-tabs: true !default;
 
 // * States * //
 $states-styleguide-headings-anchors: true !default;
@@ -229,4 +231,4 @@ $states-layout-header-blocks: true !default;
 $states-modules-secondary-tabs: true !default;
 $states-modules-main-nav-accordion: true !default;
 
-$states-modules-dropdown: true !default;
+$states-modules-f-dropdown: true !default;

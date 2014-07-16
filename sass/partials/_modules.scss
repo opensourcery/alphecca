@@ -78,7 +78,7 @@
 // ** Tabs ** //
 
 @if $modules-tabs {
-  ul.tabs {
+  ul.drupal-tabs {
     @include sub-nav();
   }
 }
@@ -157,7 +157,7 @@
 
 // ** Orbit Slider ** //
 
-@if $modules-orbit-slider {
+@if $modules-f-orbit-slider {
   $orbit-caption-position: "bottom" !default; // Supported values: "bottom", "under"
   $orbit-timer-show-progress-bar: true !default;
 
@@ -456,7 +456,7 @@
 
 // ** Dropdown ** //
 
-@if $modules-dropdown {
+@if $modules-f-dropdown {
   #block-user-login {
     h2.button[data-dropdown] {
       @include dropdown-button();
@@ -477,5 +477,18 @@
         @include dropdown-style;
       }
     }
+  }
+}
+
+
+// ** Tabs ** //
+
+@if $modules-f-tabs {
+  .tabs[data-tab] {
+    @include tabs();
+  }
+
+  div.tabs-content {
+    @include tabs-content();
   }
 }

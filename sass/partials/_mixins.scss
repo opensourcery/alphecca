@@ -1149,3 +1149,133 @@ $input-include-glowing-effect: true !default;
     &:before { border-color: transparent transparent $pip-color transparent; }
   }
 }
+
+// ** Tabs ** //
+
+// We use this mixin to add tabs styles
+// $border-color - Color of the tab border. Default: $gray_8.
+// $bg-color - Color of the tab background. Default: scale-color($gray_8, $lightness: 20%).
+// $bg-color-active - Color of the active tab background. Default: $white.
+// $text-color - Color of the tab text link. Default: $anchor-font-color.
+// $border - Determines if a border is added. Default: true.
+// $radius - Determines if radius styles are passed on. Default: true.
+// $vertical - Determines if vertical tab styles are passed on. Default: true
+@mixin tabs($border-color:$gray_8, $bg-color:scale-color($gray_8, $lightness: 20%), $bg-color-active:$white, $text-color:$anchor-font-color, $border:true, $radius:true, $vertical:true) {
+  @include clearfix;
+  margin-bottom: 0 !important;
+
+  .tab-title {
+    background: $bg-color;
+    float: $default-float;
+    margin-bottom: 0 !important;
+    margin-left: 0;
+
+    > a {
+      color: $text-color;
+      display: block;
+      padding-top: rem-calc(16);
+      padding-#{$opposite-direction}: rem-calc(16) * 2;
+      padding-bottom: rem-calc(16) + rem-calc(1);
+      padding-#{$default-float}: rem-calc(16) * 2;
+    }
+
+    &.active {
+      background: $bg-color-active;
+      position: relative;
+      top: 1px;
+    }
+  }
+
+  @if $border == true {
+    .tab-title {
+      border: 1px solid $border-color;
+      border-bottom: none;
+    }
+  }
+
+  @if $radius == true {
+    &.radius {
+      .tab-title:first-child {
+	a {
+	  @include side-radius($default-float, $global-radius);
+	}
+      }
+      .tab-title:last-child {
+	a {
+	  @include side-radius($opposite-direction, $global-radius);
+	}
+      }
+    }
+  }
+
+  @if $vertical == true {
+    &.vertical {
+      margin-top: 0;
+
+      .tab-title {
+	display: block;
+	float: none;
+	position: inherit;
+	top: auto;
+
+	&.active {
+	  border-right-color: $bg-color-active;
+	  position: relative;
+	  right: 1px;
+	}
+      }
+
+      @include breakpoint($medium) {
+        float: $default-float;
+        margin-bottom: rem-calc(20px);
+        width: 20%;
+      }
+    }
+  }
+}
+
+// We use this mixin to add tabs content styles
+// $border-color - Color of the tabs content border. Default: $gray_8.
+// $bg-color - Color of the tabs content background. Default: scale-color($gray_8, $lightness: 20%).
+// $border - Determines if a border is added. Default: true.
+// $vertical - Determines if vertical tab styles are passed on. Default: true
+@mixin tabs-content($border-color:$gray_8, $bg-color:$white, $border:true, $vertical:true) {
+  @include background(
+    $bg-color
+  );
+  @include clearfix;
+  margin-bottom: rem-calc(24px);
+
+  > .content {
+    display: none;
+    float: $default-float;
+    padding: rem-calc(30px);
+
+    &.active {
+      display: block;
+    }
+    &.contained {
+      padding: rem-calc(30px);
+    }
+  }
+
+  @if $border == true {
+    border: 1px solid $border-color;
+  }
+
+  @if $vertical == true {
+    &.vertical {
+      display: block;
+
+      > .content {
+	padding: rem-calc(30px);
+      }
+
+      @include breakpoint($medium) {
+        float: $default-float;
+        margin-#{$default-float}: -1px;
+        width: 80%;
+      }
+    }
+  }
+}

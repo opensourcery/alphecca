@@ -89,7 +89,7 @@
 
 // * Secondary tabs * //
 @if $states-modules-secondary-tabs {
-  ul.tabs.secondary {
+  ul.drupal-tabs.secondary {
     @include sub-nav(false);
   }
 }
@@ -102,7 +102,7 @@
 }
 
 // * Dropdown * //
-@if $states-modules-dropdown {
+@if $states-modules-f-dropdown {
   #block-user-login,
   #block-system-user-menu {
     h2.open[data-dropdown] {
