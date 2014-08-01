@@ -88,6 +88,18 @@
   }
 }
 
+// We use this to create circles
+// $circle-size - Used to set width and height.
+// $circle-background - Used to set background (not necessarily color).
+@mixin css-circle($circle-size, $circle-background) {
+  $radius: $circle-size/2;
+  width: $circle-size;
+  height: $circle-size;
+  background: $circle-background;
+  border: none;
+  @include border-radius($radius);
+}
+
 // We use this to create equilateral triangles
 // $triangle-size - Used to set border-size. No default, set a px or em size.
 // $triangle-color - Used to set border-color which makes up triangle. No default
