@@ -62,9 +62,9 @@
   #header {
     .block {
       @include breakpoint($medium) {
+        @include rem-fallback(margin-left, 18);
         clear: right;
         float: right;
-        margin-left: rem-calc(18);
       }
     }
 

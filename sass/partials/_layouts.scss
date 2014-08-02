@@ -9,12 +9,12 @@
 // * Header * //
 @if $layout-header {
   #header {
-    margin-bottom: rem-calc(18);
-    padding: rem-calc(18 0);
+    @include rem-fallback(margin-bottom, 18);
+    @include rem-fallback(padding, 18, 0);
 
     #site-name {
+      @include rem-fallback(margin-top, 10);
       float: left;
-      margin-top: rem-calc(10);
     }
   }
 }
@@ -22,8 +22,8 @@
 // * Footer * //
 @if $layout-footer {
   #footer {
-    margin-top: rem-calc(36);
-    padding: rem-calc(14 18 18);
+    @include rem-fallback(margin-top, 36);
+    @include rem-fallback(padding, 14, 18, 18);
   }
 }
 
@@ -34,14 +34,14 @@
 @if $layout-header-block-views-search {
   #header .views-exposed-form {
     .views-exposed-widget {
-      padding: 0 rem-calc(9) 0 0;
+      @include rem-fallback(padding, 0, 9, 0, 0);
     }
 
     .views-submit-button {
       padding-right: 0;
 
       .form-submit {
-        margin-top: rem-calc(32);
+        @include rem-fallback(margin-top, 32);
       }
     }
   }
@@ -52,9 +52,9 @@
   #header #block-user-login {
     .form-item-name,
     .form-item-persistent-login {
+      @include rem-fallback(padding-right, 9);
       clear: left;
       float: left;
-      padding-right: rem-calc(9);
     }
 
     .form-item-pass,
@@ -70,7 +70,7 @@
 
     .form-item-persistent-login,
     .form-actions {
-      margin-bottom: rem-calc(9);
+      @include rem-fallback(margin-bottom, 9);
     }
   }
 }

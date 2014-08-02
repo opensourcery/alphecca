@@ -26,6 +26,7 @@
     @include adjust-font-size-to(14px, 1.33333333333333);
     @include block-glowing-effect(hover, 0.15s, scale-color($black, $lightness: 20%));
     @include radius($global-radius);
+    @include rem-fallback(padding, 9, 9, 9, 50);
     @include single-transition(background-color);
     background-color: $gray_3;
     background-image: url(../vendor/alphecca/images/icons/menu-white.svg);
@@ -35,7 +36,6 @@
     color: $white;
     display: block;
     height: 50px;
-    padding: rem-calc(9 9 9 50);
     text-decoration: none;
     text-transform: uppercase;
     width: 100%;
@@ -100,10 +100,10 @@
   .comment {
     @include box-shadow(rgba(0, 0, 0, .05) 0px 2px 10px inset);
     @include radius($global-radius);
+    @include rem-fallback(margin, 24, 0);
+    @include rem-fallback(padding, 9, 32);
     background-color: tint($gray_8, 60%);
     border: 1px solid $gray_8;
-    margin: rem-calc(24 0);
-    padding: rem-calc(9 32);
     position: relative;
 
     &:after, &:before {
@@ -138,17 +138,17 @@
       @include clearfix;
 
       .submitted {
+        @include rem-fallback(margin, 0, 18, 0, 0);
         float: left;
-        margin: 0 rem-calc(18) 0 0;
       }
 
       .permalink {
+        @include rem-fallback(padding-left, 24);
         background-image: url(../vendor/alphecca/images/icons/link.svg);
         background-position: left 50%;
         background-repeat: no-repeat;
         background-size: 16px 16px;
         float: right;
-        padding-left: rem-calc(24);
       }
     }
   }
@@ -281,9 +281,9 @@
           }
 
           @include adjust-font-size-to(14px);
+          @include rem-fallback(padding, 9, 14);
           background-color: rgba(51,51,51,0.8);
           color: $white;
-          padding: rem-calc(9 14);
           width: 100%;
         }
       }
@@ -298,7 +298,10 @@
       top: 10px;
       z-index: 10;
 
-      span { font-weight: 700; padding: rem-calc(5); }
+      span {
+        @include rem-fallback(padding, 5);
+        font-weight: 700;
+      }
     }
 
     .orbit-timer {
@@ -428,12 +431,12 @@
 
     li {
       @include radius(1000px);
+      @include rem-fallback(height, 9);
+      @include rem-fallback(width, 9);
       background: $gray_6;
       display: inline-block;
       float: none;
-      height: rem-calc(9);
       margin-#{$opposite-direction}: 6px;
-      width: rem-calc(9);
 
       &.active {
         background: $gray_3;

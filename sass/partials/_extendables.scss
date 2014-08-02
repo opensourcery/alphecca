@@ -65,8 +65,8 @@
   li {
     ul,
     ol {
+      @include rem-fallback(margin-#{$default-float}, 18);
       list-style: none;
-      margin-#{$default-float}: rem-calc(18);
       margin-bottom: 0;
     }
   }

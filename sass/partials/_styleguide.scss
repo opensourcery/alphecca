@@ -95,9 +95,9 @@
   // Get rid of gap under images by making them display: inline-block; by default
   img {
     //@include radius($global-radius);
+    //@include rem-fallback(padding, 9);
     //border: 1px solid $gray_8;
     display: inline-block;
-    //padding: rem-calc(9);
     vertical-align: middle;
 
     a & {
@@ -116,15 +116,15 @@
 // * Typography Defaults * //
 @if $styleguide-typo-defaults {
   p {
-    margin: rem-calc(18 0);
+    @include rem-fallback(margin, 18, 0);
   }
 
   hr {
+    @include rem-fallback(margin, 18, 0);
     border: solid $gray_8;
     border-width: 1px 0 0;
     clear: both;
     height: 0;
-    margin: rem-calc(18 0);
   }
 
   em,
@@ -147,9 +147,9 @@
 
   pre {
     @include box-shadow(rgba(0, 0, 0, .05) 0px 2px 10px inset);
+    @include rem-fallback(margin-bottom, 18);
+    @include rem-fallback(padding, 14);
     background-color: tint($gray_8, 80%);
-    margin-bottom: rem-calc(18);
-    padding: rem-calc(14);
   }
 
   code {
@@ -160,12 +160,12 @@
 
   sup {
     @include adjust-font-size-to(11px);
-    margin: rem-calc(3 0 -3);
+    @include rem-fallback(margin, 3, 0, -3);
   }
 
   sub {
     @include adjust-font-size-to(11px);
-    margin: rem-calc(-3 0 3);
+    @include rem-fallback(margin, -3, 0, 3);
   }
 }
 
@@ -174,8 +174,8 @@
   :not(nav) ul,
   ol,
   dl {
+    @include rem-fallback(margin-bottom, 18);
     list-style-position: outside;
-    margin-bottom: rem-calc(18);
   }
 }
 
@@ -186,8 +186,8 @@
     li {
       ul,
       ol {
+        @include rem-fallback(margin-#{$default-float}, 18);
         font-size: 1rem; /* Override nested font-size change */
-        margin-#{$default-float}: rem-calc(18);
         margin-bottom: 0;
       }
     }
@@ -201,7 +201,7 @@
     li {
       ul,
       ol {
-        margin-#{$default-float}: rem-calc(18);
+        @include rem-fallback(margin-#{$default-float}, 18);
         margin-bottom: 0;
       }
     }
@@ -216,7 +216,7 @@
       @include boldheader(700, $gray, "", uppercase);
       margin-bottom: 0.3rem;
     }
-    dd { margin-bottom: rem-calc(14); }
+    dd { @include rem-fallback(margin-bottom, 14); }
   }
 }
 
@@ -238,15 +238,15 @@
 // * Blockquotes * //
 @if $styleguide-blockquotes {
   blockquote {
+    @include rem-fallback(margin, 0, 0, 18);
+    @include rem-fallback(padding, 3, 18);
     background-color: tint($gray_8, 80%);
     border-#{$default-float}: 1px solid $gray_8;
-    margin: rem-calc(0 0 18);
-    padding: rem-calc(3 18);
 
     cite {
+      @include rem-fallback(font-size, 14);
       color: $gray_6;
       display: block;
-      font-size: rem-calc(14);
       &:before {
         content: "\2014 \0020";
       }
@@ -268,7 +268,7 @@
 
 @if $styleguide-forms {
   // * Standard Forms * //
-  form { margin: 0 0 rem-calc(16); }
+  form { @include rem-fallback(margin, 0, 0, 16); }
 
   // * Label Styles * //
   @if $styleguide-label-styles {
@@ -286,14 +286,14 @@
   @if $styleguide-select {
     select {
       @include radius($global-radius);
+      @include rem-fallback(font-size, 14);
+      @include rem-fallback(padding, (16 / 2));
       background:
         $paperwhite
         url('data:image/svg+xml;base64, PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZlcnNpb249IjEuMSIgeD0iMHB4IiB5PSIwcHgiIHdpZHRoPSI2cHgiIGhlaWdodD0iM3B4IiB2aWV3Qm94PSIwIDAgNiAzIiBlbmFibGUtYmFja2dyb3VuZD0ibmV3IDAgMCA2IDMiIHhtbDpzcGFjZT0icHJlc2VydmUiPjxwb2x5Z29uIHBvaW50cz0iNS45OTIsMCAyLjk5MiwzIC0wLjAwOCwwICIvPjwvc3ZnPg==') no-repeat;
       background-position-x: 97%;
       background-position-y: center;
       border: 1px solid scale-color($white, $lightness: -20%);
-      font-size: rem-calc(14);
-      padding: rem-calc(16) / 2;
       -webkit-appearance: none !important;
 
       &:hover,
@@ -397,7 +397,7 @@
 
     // Add height value for select elements to match text input height
     select {
-      height: (rem-calc(14) + (rem-calc(16) * 1.5) - rem-calc(1));
+      @include rem-fallback(height, (14 + (16 * 1.5) - 1));
     }
 
     // Adjust margin for form elements below
@@ -405,14 +405,14 @@
     input[type="checkbox"],
     input[type="radio"],
     select {
-      margin: 0 0 rem-calc(16) 0;
+      @include rem-fallback(margin, 0, 0, 16, 0);
     }
 
     input[type="checkbox"] + label,
     input[type="radio"] + label {
       display: inline-block;
-      margin-#{$default-float}: rem-calc(16) * .5;
-      margin-#{$opposite-direction}: rem-calc(16);
+      @include rem-fallback(margin-#{$default-float}, (16 * .5));
+      @include rem-fallback(margin-#{$opposite-direction}, 16);
       margin-bottom: 0;
       vertical-align: baseline;
     }
@@ -449,13 +449,13 @@
     &.success   { @include button-style($bg:$success-color); }
     &.alert     { @include button-style($bg:$alert-color); }
 
-    &.large  { @include button-size($padding:rem-calc(18)); }
-    &.small  { @include button-size($padding:rem-calc(14)); }
-    &.tiny   { @include button-size($padding:rem-calc(10)); }
+    &.large  { @include button-size($padding:18); }
+    &.small  { @include button-size($padding:14); }
+    &.tiny   { @include button-size($padding:10); }
     &.expand { @include button-size($padding:null,$full-width:true); }
 
-    &.left-align  { text-align: left; text-indent: rem-calc(12); }
-    &.right-align { text-align: right; padding-right: rem-calc(12); }
+    &.left-align  { text-align:left; text-indent:12; }
+    &.right-align { text-align:right; padding-right:12; }
 
     &.radius { @include button-style($bg:false, $radius:true); }
     &.round  { @include button-style($bg:false, $radius:$global-rounded); }
@@ -467,7 +467,7 @@
     }
   }
   button, input[type="submit"], input[type="button"] {
-    @include button-size($padding:false, $is-input:rem-calc(12));
+    @include button-size($padding:false, $is-input:12);
   }
 }
 
@@ -500,11 +500,11 @@
 @if $styleguide-system-messages {
   div.messages {
     @include radius($global-radius);
-    background-position: rem-calc(14) rem-calc(18);
+    @include rem-fallback(background-position, 14, 18);
+    @include rem-fallback(margin, 18, 0);
+    @include rem-fallback(padding, 14, 18, 14, 44);
     background-repeat: no-repeat;
     border: 1px solid;
-    margin: rem-calc(18 0);
-    padding: rem-calc(14 18 14 44);
   }
   div.status {
     background-color: $pale-green;
@@ -533,16 +533,16 @@
 @if $styleguide-system-inline-links {
   ul.links.inline {
     @include horizontal-list;
-    margin: rem-calc(18 0);
+    @include rem-fallback(margin, 18, 0);
   }
 }
 
 // * Description * //
 @if $styleguide-system-description {
   div.description {
-    color: $gray_3;
     @include adjust-font-size-to(13px);
-    margin-bottom: rem-calc(9);
+    @include rem-fallback(margin-bottom, 9);
+    color: $gray_3;
   }
 }
 
@@ -558,7 +558,7 @@
 @if $styleguide-system-tables {
   .draggable {
     a.tabledrag-handle {
-      height: (rem-calc(14) + (rem-calc(16) * 1.5) - rem-calc(1));
+      @include rem-fallback(height, (14 + (16 * 1.5) - 1));
 
       .handle {
         @include box-sizing(content-box);
@@ -607,7 +607,7 @@
 // * Chosen * //
 @if $styleguide-contrib-chosen {
   .chosen-container {
-    margin: 0 0 rem-calc(16) 0;
+    @include rem-fallback(margin, 0, 0, 16, 0);
   }
 }
 
