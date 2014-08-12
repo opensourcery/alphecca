@@ -172,8 +172,7 @@
 // * Lists * //
 @if $styleguide-lists {
   :not(nav) ul,
-  ol,
-  dl {
+  ol {
     @include rem-fallback(margin-bottom, 18);
     list-style-position: outside;
   }
@@ -211,6 +210,7 @@
 // * Definition Lists * //
 @if $styleguide-definition-lists {
   dl {
+    @include rem-fallback(margin, 0, 0, 18);
     dt {
       @include adjust-font-size-to(14px);
       @include boldheader(700, $gray, "", uppercase);

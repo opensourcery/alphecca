@@ -1323,3 +1323,47 @@ $input-include-glowing-effect: true !default;
     }
   }
 }
+
+// ** Accordion ** //
+// We use this mixin to style accordions
+// $nav-bg-color - Background color of the accordion navigation trigger. Default:$gray_8.
+// $nav-font-color - Font color of the accordion navigation trigger text. Default:$anchor-font-color.
+// $nav-font-family - Font family of the accordion navigation trigger text. Default:$body-font-family.
+// $nav-font-size - Font size of the accordion navigation trigger text. Default:$rem-base.
+// $content-bg-color - Background color of the accordion content. Default:$white.
+@mixin accordion($nav-bg-color:$gray_8, $nav-font-color:$anchor-font-color, $nav-font-family:$body-font-family, $nav-font-size:$rem-base, $content-bg-color:$white) {
+  @include clearfix;
+  margin-bottom: 0;
+
+  dd {
+    display: block;
+    margin-bottom: 0 !important;
+    margin-left: 0 !important;
+
+    &.active a {
+      background: darken($nav-bg-color, 3%);
+    }
+    > a {
+      background: $nav-bg-color;
+      color: $nav-font-color;
+      display: block;
+      font-family: $nav-font-family;
+      font-size: $nav-font-size;
+      padding: rem-calc(16);
+
+      &:hover {
+	background: darken($nav-bg-color, 5%);
+      }
+    }
+  }
+
+  .content {
+    display: none;
+    padding: rem-calc(30)/2;
+
+    &.active {
+      background: $content-bg-color;
+      display: block;
+    }
+  }
+}

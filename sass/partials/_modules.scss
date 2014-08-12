@@ -495,3 +495,10 @@
     @include tabs-content();
   }
 }
+
+// ** Accordion ** //
+@if $modules-f-accordion {
+  .accordion[data-accordion] {
+    @include accordion();
+  }
+}
